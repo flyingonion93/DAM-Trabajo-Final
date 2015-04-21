@@ -8,8 +8,8 @@ function onStart () {
 	// TODO : Add your Initilize code here
 	// NOTE : In order to start your app, call "sf.start()" at the end of this function!!
 	
-	sf.scene.show('Scene1');
-	sf.scene.focus('Scene1');
+	sf.scene.show('SceneMain');
+	sf.scene.focus('SceneMain');
 }
 function onDestroy () {
 	//stop your XHR or Ajax operation and put codes to distroy your application here
@@ -117,8 +117,8 @@ alert("init.js loaded.");
 		});
 
 
-		SceneScene1.prototype.handleKeyDown = function (keyCode) {
-			alert("SceneScene1.handleKeyDown(" + keyCode + ")");
+		SceneSceneMain.prototype.handleKeyDown = function (keyCode) {
+			alert("SceneSceneMain.handleKeyDown(" + keyCode + ")");
 			// TODO : write an key event handler when this scene get focued
 			switch (keyCode) {
 				case sf.key.LEFT:
@@ -135,13 +135,13 @@ alert("init.js loaded.");
 					break;
 				case sf.key.ENTER:
 					movie_id = current.attr('href');
-					sf.scene.hide('Scene1');
+					sf.scene.hide('SceneMain');
 					sf.scene.show('Scene2');
 					sf.scene.focus('Scene2');
 					break;
 				case sf.key.TOOLS:
 					event.preventDefault();
-					sf.scene.hide('Scene1');
+					sf.scene.hide('SceneMain');
 					sf.scene.show('SceneLogin');
 					sf.scene.focus('SceneLogin');
 				default:
@@ -158,8 +158,8 @@ alert("init.js loaded.");
 					event.preventDefault();
 					movie_id = '';
 					sf.scene.hide('Scene2');
-					sf.scene.show('Scene1');
-					sf.scene.focus('Scene1');
+					sf.scene.show('SceneMain');
+					sf.scene.focus('SceneMain');
 					break;
 				case sf.key.N1:
 					puntuar(1*2);

@@ -1,8 +1,8 @@
 {
  "scenes": [
-  "Scene1",
   "Scene2",
-  "SceneLogin"
+  "SceneLogin",
+  "SceneMain"
  ],
  "files": [],
  "theme": "base",

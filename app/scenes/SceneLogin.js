@@ -122,8 +122,8 @@ SceneSceneLogin.prototype.handleKeyDown = function (keyCode) {
 		case sf.key.RETURN:
 			event.preventDefault();
 			sf.scene.hide('SceneLogin');
-			sf.scene.show('Scene1');
-			sf.scene.focus('Scene1');
+			sf.scene.show('SceneMain');
+			sf.scene.focus('SceneMain');
 			break;
 		default:
 			alert("handle default key event, key code(" + keyCode + ")");
