@@ -22,16 +22,19 @@ SceneSceneMain.prototype.initialize = function () {
 	  url: API+"/discover/movie?api_key="+api_key,
 	  success: function(data){
 	  	alert('success');
-	  	for (var i = 11; i >= 0; i--) {
-	  		if(i == 11) $("#movies").append('<div class="row">');
-	  		if(i == 5) $("#movies").append('</div><div class="row">');
-	  		if(i == 0) $("#movies").append('</div>');
-	  		$("#movies").append('<div class="col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+	  	for (var i = 7; i >= 0; i--) {
+	  		if(i == 7){
+	  			$( "#movies" ).append( '<div class="big-sugestion">' );
+	  			$( "#movies" ).append( '<div class="col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+	  		} 
+	  		if( i == 6 ) $( "#movies" ).append( '</div><div class="small-sugestions-row"' );
+	  		if( i == 0 ) $( "#movies" ).append( '</div>' );	  		
+	  		$( "#movies" ).append('<div class="col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
 	  	}
-	  	$('#movies div.col-xs-2').keynav();
+	  	$( '#movies div.col-xs-4' ).keynav();
 	  },
 	  error: function(){
-	  	alert('error');
+	  	alert( 'error' );
 	  }
 	});
 
