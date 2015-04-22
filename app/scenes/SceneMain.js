@@ -23,14 +23,16 @@ SceneSceneMain.prototype.initialize = function () {
 	  success: function(data){
 	  	alert('success');
 	  	for (var i = 7; i >= 0; i--) {
-	  		if(i == 7){
+	  		if(i == 7 ){
 	  			$( "#movies" ).append( '<div class="big-sugestion">' );
 	  			$( "#movies" ).append( '<div class="col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
-	  		} 
-	  		if( i == 6 ) $( "#movies" ).append( '</div><div class="small-sugestions-row"' );
-	  		if( i == 0 ) $( "#movies" ).append( '</div>' );	  		
-	  		$( "#movies" ).append('<div class="col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+	  		} else {
+	  			if( i == 6 ) $( "#movies" ).append( '</div><div class="small-sugestions-row"' );
+		  		if( i == 0 ) $( "#movies" ).append( '</div>' );	  		
+		  		$( "#movies" ).append('<div class="col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+	  		}	  		
 	  	}
+	  	
 	  	$( '#movies div.col-xs-4' ).keynav();
 	  },
 	  error: function(){
