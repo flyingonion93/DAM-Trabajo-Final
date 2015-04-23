@@ -41,8 +41,13 @@ SceneSceneShow.prototype.handleShow = function ( data, type ) {
 	  	
 	  	for (var i = 0; i < cont; i++){
 	  	
-	  		$("#genres").append(data.genres[i].name + ', ');
-	  		  
+	  		if(i == cont-1) {
+	  			$("#genres").append(data.genres[i].name);
+	  		}
+	  		
+	  		else {
+	  			$("#genres").append(data.genres[i].name + ', ');
+	  		}
 	  	}
 	  	
 	  	$("#overview").html(data.overview);
