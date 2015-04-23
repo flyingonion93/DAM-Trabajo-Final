@@ -8,27 +8,47 @@ SceneSceneShow.prototype.initialize = function () {
 	alert("SceneSceneShow.initialize()");
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
-	// scene HTML and CSS will be loaded before this function is called
-
+	// scene HTML and CSS will be loaded before this function is called	
+		
+	//$("#duration").html('Duration: 70');	
+	
 };
 
 SceneSceneShow.prototype.handleShow = function ( data, type ) {
 	alert("SceneSceneShow.handleShow()");
-//	// this function will be called when the scene manager show this scene
-//	$.ajax({
-//	  type: "GET",
-//	  crossDomain: true,
-//	  async: true,
-//	  dataType: "json",
-//	  url: API+'/movie/'+movie_id,
-//	  data: { api_key: api_key },
-//	  success: function(data){
-//	  	$("#details").css('background-image', 'url(' + base_url+'w1280'+data.backdrop_path + ')');
-//	  	$("#cover").append('<img src="'+base_url+'w342'+data.poster_path+'"/>');
-//	  	$("#title").append('<h1>'+data.title+'</h1>');
-//	  	$("#title").append('<h2>'+data.tagline+'</h2>');
-//	  	$("#sinopsis").append(data.overview);	  }
-//	});
+	// this function will be called when the scene manager show this scene
+	$.ajax({
+	  type: "GET",
+	  crossDomain: true,
+	  async: true,
+	  dataType: "json",
+	  url: API+'/movie/'+movie_id,
+	  data: { api_key: api_key },
+	  success: function(data){
+		  
+	 var fecha = data.release_date;
+	  	
+	//$("#details").css('background-image', 'url(' + base_url+'w1280'+data.backdrop_path + ')');
+	  	$("#imagen").append('<img src="'+base_url+'w342'+data.poster_path+'"/>');
+	  	$("#title").html(data.title + '  (' + fecha.substring(0,4) + ')');
+	  	$("#createdby").html('<b>Created By:</b> ' + 'Director1');
+	  	$("#starring").html('<b>Starring:</b> ' + 'Actor1');
+	  	$("#genres").html('<b>Genres:</b> ');
+	  	
+	  	alert(data.genres.length);
+	  	
+	  	var cont = data.genres.length;
+	  	
+	  	for (var i = 0; i < cont; i++){
+	  	
+	  		$("#genres").append(data.genres[i].name + ', ');
+	  		  
+	  	}
+	  	
+	  	$("#overview").html(data.overview);
+	  	
+	  }
+	});
 };
 
 SceneSceneShow.prototype.handleHide = function () {
