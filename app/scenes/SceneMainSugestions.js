@@ -1,11 +1,11 @@
-alert('SceneSceneMain.js loaded');
+alert('SceneSceneMainSugestions.js loaded');
 
-function SceneSceneMain() {
+function SceneSceneMainSugestions() {
 
 };
 
-SceneSceneMain.prototype.initialize = function () {
-	alert("SceneSceneMain.initialize()");
+SceneSceneMainSugestions.prototype.initialize = function () {
+	alert("SceneSceneMainSugestions.initialize()");
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
@@ -42,23 +42,23 @@ SceneSceneMain.prototype.initialize = function () {
 
 };
 
-SceneSceneMain.prototype.handleShow = function (data) {
-	alert("SceneSceneMain.handleShow()");
+SceneSceneMainSugestions.prototype.handleShow = function (data) {
+	alert("SceneSceneMainSugestions.handleShow()");
 	// this function will be called when the scene manager show this scene
 };
 
-SceneSceneMain.prototype.handleHide = function () {
-	alert("SceneSceneMain.handleHide()");
+SceneSceneMainSugestions.prototype.handleHide = function () {
+	alert("SceneSceneMainSugestions.handleHide()");
 	// this function will be called when the scene manager hide this scene
 };
 
-SceneSceneMain.prototype.handleFocus = function () {
-	alert("SceneSceneMain.handleFocus()");
+SceneSceneMainSugestions.prototype.handleFocus = function () {
+	alert("SceneSceneMainSugestions.handleFocus()");
 	// this function will be called when the scene manager focus this scene
 };
 
-SceneSceneMain.prototype.handleBlur = function () {
-	alert("SceneSceneMain.handleBlur()");
+SceneSceneMainSugestions.prototype.handleBlur = function () {
+	alert("SceneSceneMainSugestions.handleBlur()");
 	// this function will be called when the scene manager move focus to another scene from this scene
 };
 

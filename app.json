@@ -1,8 +1,11 @@
 {
  "scenes": [
-  "Scene2",
-  "SceneLogin",
-  "SceneMain"
+  "SceneShow",
+  "SceneSugestions",
+  "SceneMainSugestions",
+  "SceneNewReleases",
+  "SceneProfile",
+  "SceneCategories"
  ],
  "files": [],
  "theme": "base",
