@@ -14,30 +14,30 @@ SceneSceneShow.prototype.initialize = function () {
 
 SceneSceneShow.prototype.handleShow = function ( data, type ) {
 	alert("SceneSceneShow.handleShow()");
-	// this function will be called when the scene manager show this scene
-	$.ajax({
-	  type: "GET",
-	  crossDomain: true,
-	  async: true,
-	  dataType: "json",
-	  url: API+'/movie/'+movie_id,
-	  data: { api_key: api_key },
-	  success: function(data){
-	  	$("#details").css('background-image', 'url(' + base_url+'w1280'+data.backdrop_path + ')');
-	  	$("#cover").append('<img src="'+base_url+'w342'+data.poster_path+'"/>');
-	  	$("#title").append('<h1>'+data.title+'</h1>');
-	  	$("#title").append('<h2>'+data.tagline+'</h2>');
-	  	$("#sinopsis").append(data.overview);	  }
-	});
+//	// this function will be called when the scene manager show this scene
+//	$.ajax({
+//	  type: "GET",
+//	  crossDomain: true,
+//	  async: true,
+//	  dataType: "json",
+//	  url: API+'/movie/'+movie_id,
+//	  data: { api_key: api_key },
+//	  success: function(data){
+//	  	$("#details").css('background-image', 'url(' + base_url+'w1280'+data.backdrop_path + ')');
+//	  	$("#cover").append('<img src="'+base_url+'w342'+data.poster_path+'"/>');
+//	  	$("#title").append('<h1>'+data.title+'</h1>');
+//	  	$("#title").append('<h2>'+data.tagline+'</h2>');
+//	  	$("#sinopsis").append(data.overview);	  }
+//	});
 };
 
 SceneSceneShow.prototype.handleHide = function () {
 	alert("SceneSceneShow.handleHide()");
 	// this function will be called when the scene manager hide this scene
-	$("#cover").html('');
-	$("#title").html('');
-	$("#title").html('');
-	$("#sinopsis").html('');	
+//	$("#cover").html('');
+//	$("#title").html('');
+//	$("#title").html('');
+//	$("#sinopsis").html('');	
 };
 
 SceneSceneShow.prototype.handleFocus = function () {
@@ -70,16 +70,16 @@ SceneSceneShow.prototype.handleKeyDown = function (keyCode) {
 	}
 };
 
-function puntuar (puntuacion) {
-	$.ajax({
-	  type: "POST",
-	  crossDomain: true,
-	  async: true,
-	  dataType: "json",
-	  url: API+'/movie/'+id+'/rating',
-	  data: { api_key: api_key, session_id: session_id, value: puntuacion },
-	  success: function(data){
-	  	console.log(data);
-	  }
-	});
-};
+//function puntuar (puntuacion) {
+//	$.ajax({
+//	  type: "POST",
+//	  crossDomain: true,
+//	  async: true,
+//	  dataType: "json",
+//	  url: API+'/movie/'+id+'/rating',
+//	  data: { api_key: api_key, session_id: session_id, value: puntuacion },
+//	  success: function(data){
+//	  	console.log(data);
+//	  }
+//	});
+//};
