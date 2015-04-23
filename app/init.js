@@ -134,8 +134,8 @@ alert( "init.js loaded." );
 				case sf.key.ENTER:
 					movie_id = current.attr( 'href' );
 					sf.scene.hide( 'SceneMainSugestions' );
-					sf.scene.show( 'Scene2' );
-					sf.scene.focus( 'Scene2' );
+					sf.scene.show( 'SceneShow' );
+					sf.scene.focus( 'SceneShow' );
 					break;
 				case sf.key.TOOLS:
 					event.preventDefault();
@@ -148,14 +148,14 @@ alert( "init.js loaded." );
 			}
 		};
 
-		SceneScene2.prototype.handleKeyDown = function ( keyCode ) {
-			alert( "SceneScene2.handleKeyDown(" + keyCode + ")" );
+		SceneSceneShow.prototype.handleKeyDown = function ( keyCode ) {
+			alert( "SceneSceneShow.handleKeyDown(" + keyCode + ")" );
 			// TODO : write a key event handler when this scene gets focused
 			switch ( keyCode ) {
 				case sf.key.RETURN:
 					event.preventDefault();
 					movie_id = '';
-					sf.scene.hide( 'Scene2' );
+					sf.scene.hide( 'SceneShow' );
 					sf.scene.show( 'SceneMainSugestions' );
 					sf.scene.focus( 'SceneMainSugestions' );
 					break;
@@ -179,7 +179,6 @@ alert( "init.js loaded." );
 					break;
 			}
 		};
-
 
 		return this;
 	};
