@@ -7,3 +7,30 @@
 	background-color : #ffffff;
 	background-image : url('');
 }
+#SceneSceneNewReleases #ReleaseOne{
+	position : absolute;
+	left : 50px;
+	top : 70px;
+	width : 341px;
+	height : 471px;
+}
+#SceneSceneNewReleases #ReleaseTwo{
+	position : absolute;
+	left : 410px;
+	top : 70px;
+	width : 341px;
+	height : 471px;
+}
+#SceneSceneNewReleases #ReleaseThree{
+	position : absolute;
+	left : 770px;
+	top : 70px;
+	width : 341px;
+	height : 471px;
+}
+#SceneSceneNewReleases #MoreReleases{
+	position : absolute;
+	left : 1150px;
+	top : 310px;
+	width : 71px;
+}
