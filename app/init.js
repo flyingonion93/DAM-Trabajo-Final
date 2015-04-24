@@ -3,6 +3,7 @@ var api_key = 'fffcfc6228ea5f968c308ea249b5a9eb';
 var session_id = '';
 var base_url = 'http://image.tmdb.org/t/p/';
 var movie_id = '';
+var firstUse = true;
 
 function onStart () {
 	// TODO : Add your Initialize code here
@@ -13,6 +14,7 @@ function onStart () {
 	
 	sf.scene.show( 'SceneMainSugestions' );
 	sf.scene.focus( 'SceneMainSugestions' );
+	
 }
 function onDestroy () {
 	//stop your XHR or Ajax operation and put codes to destroy your application here	

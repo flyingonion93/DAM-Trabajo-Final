@@ -9,10 +9,15 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
+	alert( firstUse );
 	alert(api_key);
 	session_id = localStorage.getItem('session_id');
 	alert(session_id);
-
+	
+	if( firstUse == true ) {
+		$('#popupTest').sfPopup('show');
+	}
+	
 	alert(API+"/discover/movie?api_key="+api_key);
 	$.ajax({
 	  type: "GET",
@@ -21,25 +26,24 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 	  dataType: "json",
 	  url: API+"/discover/movie?api_key="+api_key,
 	  success: function(data){
+		//sort( data )
 	  	alert('success');
 	  	for (var i = 7; i >= 0; i--) {
 	  		if(i == 7 ){
-	  			$( "#movies" ).append( '<div class="big-sugestion">' );
-	  			$( "#movies" ).append( '<div class="col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+	  			$( "#movies" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 	  		} else {
-	  			if( i == 6 ) $( "#movies" ).append( '</div><div class="small-sugestions-row"' );
-		  		if( i == 0 ) $( "#movies" ).append( '</div>' );	  		
-		  		$( "#movies" ).append('<div class="col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+//	  			if( i == 6 ) $( "#movies" ).append( '</div><div class="small-sugestions-row"' );
+//		  		if( i == 0 ) $( "#movies" ).append( '</div>' );	  		
+		  		$( "#movies" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
 	  		}	  		
 	  	}
 	  	
-	  	$( '#movies div.col-xs-4' ).keynav();
+	  	$( '#movies div.item' ).keynav();
 	  },
 	  error: function(){
 	  	alert( 'error' );
 	  }
 	});
-
 };
 
 SceneSceneMainSugestions.prototype.handleShow = function (data) {

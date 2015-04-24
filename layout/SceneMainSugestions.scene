@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:tv.samsung.sdk="http://www.samsung.com/tvsdk">
-  <tv.samsung.sdk:VisualScene xmi:id="_2ieUoORMEeGc3-aXEl7Rpg" sId="Scene1" sName="" sType="0" sBgImage="" sBgClr="#ffffff" sWidth="1280" sHeight="720"/>
+  <tv.samsung.sdk:VisualScene xmi:id="_2ieUoORMEeGc3-aXEl7Rpg" sId="Scene1" sName="" sType="0" sBgImage="" sBgClr="#ffffff" sWidth="1280" sHeight="720">
+    <sComponents xmi:type="tv.samsung.sdk:VisualCtrlComponent" xmi:id="_4TPYAOnTEeSH2LbS-o8v9A" sWidth="400.0" sHeight="153.0" sBgImage="" sResolution="720" sId="svecPopup_jsu4" sCaption="" sResizeOpt="ResizeOption_None" sUserCodeIncludeJs="" sUserCodeInit="" sUserCodeDestroy="" sUserLibJs="" sUserLibImgDir="" sUserLibCss="" sType="popup" sFunctionName="sfPopup" sLockCaption="true" sLockLeft="true" sLockTop="true" sLockWidth="true" sLockHeight="true" sLockBgImage="true">
+      <sParams xmi:type="tv.samsung.sdk:ParamStruct" xmi:id="_4TPYAenTEeSH2LbS-o8v9A" sAllowArrayNameChange="true" sNullString="" sName="text" sOrder="-1" sValue="popup text"/>
+      <sParams xmi:type="tv.samsung.sdk:ParamStruct" xmi:id="_4TPYAunTEeSH2LbS-o8v9A" sAllowArrayNameChange="true" sNullString="" sName="buttons" sOrder="-1" sValue="'OK'" sType="ARRAY"/>
+      <sParams xmi:type="tv.samsung.sdk:ParamStruct" xmi:id="_4TPYA-nTEeSH2LbS-o8v9A" sAllowArrayNameChange="true" sNullString="" sName="callback" sOrder="-1" sValue="function" sType="FUNCTION"/>
+    </sComponents>
+  </tv.samsung.sdk:VisualScene>
   <notation:Diagram xmi:id="_RmCJgNStEeSOj-ElPkQOFQ" type="VisualScene" element="_2ieUoORMEeGc3-aXEl7Rpg" name="Scene1.scene" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_4TSbUOnTEeSH2LbS-o8v9A" type="2001" element="_4TPYAOnTEeSH2LbS-o8v9A" fontName="Segoe UI">
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4TSbUenTEeSH2LbS-o8v9A" x="525" y="200"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_2ieUouRMEeGc3-aXEl7Rpg"/>
   </notation:Diagram>
 </xmi:XMI>
