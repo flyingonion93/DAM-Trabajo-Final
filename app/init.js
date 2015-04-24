@@ -10,11 +10,11 @@ function onStart () {
 	// TODO : Add your Initialize code here
 	// NOTE : In order to start your app, call "sf.start()" at the end of this function!!
 		
-//	sf.scene.show( 'Video' );
-//	sf.scene.focus( 'Video' );
+	sf.scene.show( 'SceneVideo' );
+	sf.scene.focus( 'SceneVideo' );
 	
-	sf.scene.show( 'SceneMainSugestions' );
-	sf.scene.focus( 'SceneMainSugestions' );
+//	sf.scene.show( 'SceneMainSugestions' );
+//	sf.scene.focus( 'SceneMainSugestions' );
 	
 }
 function onDestroy () {
