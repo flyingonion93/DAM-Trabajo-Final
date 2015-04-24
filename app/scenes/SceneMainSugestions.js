@@ -31,13 +31,10 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 	  	for (var i = 7; i >= 0; i--) {
 	  		if(i == 7 ){
 	  			$( "#movies" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
-	  		} else {
-//	  			if( i == 6 ) $( "#movies" ).append( '</div><div class="small-sugestions-row"' );
-//		  		if( i == 0 ) $( "#movies" ).append( '</div>' );	  		
+	  		} else { 		
 		  		$( "#movies" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
 	  		}	  		
 	  	}
-	  	
 	  	$( '#movies div.item' ).keynav();
 	  },
 	  error: function(){
