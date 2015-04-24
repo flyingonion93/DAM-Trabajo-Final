@@ -125,13 +125,17 @@ alert( "init.js loaded." );
 			// TODO : write a key event handler when this scene gets focused
 			switch ( keyCode ) {
 				case sf.key.LEFT:
-					setCurrent( x, y-1 );
+					if( ( x == 0 && y == 1 ) || ( x == 1 && y == 0 ) )
+						setCurrent( 0, 0 );
+					else
+						setCurrent( x, y-1 );
 					break;
 				case sf.key.RIGHT:
 					setCurrent( x, y+1 );
 					break;
 				case sf.key.UP:
-					setCurrent( x-1, y );
+					setCurrent( x+1, y-1);
+					//setCurrent( x-1, y );
 					break;
 				case sf.key.DOWN:
 					setCurrent( x+1, y );
@@ -151,6 +155,9 @@ alert( "init.js loaded." );
 					alert( "handle default key event, key code(" + keyCode + ")" );
 					break;
 			}
+			alert( 'key code: ' + keyCode );
+			alert( 'x value: ' + x );
+			alert( 'y value: ' + y );
 		};
 
 		SceneSceneShow.prototype.handleKeyDown = function ( keyCode ) {
