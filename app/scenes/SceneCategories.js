@@ -1,4 +1,4 @@
-alert('SceneSceneMainSugestionsCategories.js loaded');
+
 
 function SceneSceneMainSugestionsCategories() {
 
