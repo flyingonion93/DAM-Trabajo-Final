@@ -134,11 +134,14 @@ alert( "init.js loaded." );
 					setCurrent( x, y+1 );
 					break;
 				case sf.key.UP:
-					setCurrent( x+1, y-1);
-					//setCurrent( x-1, y );
+					if( x == 0 )
+						setCurrent( x+1, y-1 );
+					else 
+						setCurrent( x-1, y+1 );
 					break;
 				case sf.key.DOWN:
-					setCurrent( x+1, y );
+					if( x == 0 )
+						//setCurrent( x+-1, y-1 );
 					break;
 				case sf.key.ENTER:
 					movie_id = current.attr( 'href' );
