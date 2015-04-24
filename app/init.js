@@ -4,13 +4,14 @@ var session_id = '';
 var base_url = 'http://image.tmdb.org/t/p/';
 var movie_id = '';
 var firstUse = true;
+var movie_trailer_id = '';
 
 function onStart () {
 	// TODO : Add your Initialize code here
 	// NOTE : In order to start your app, call "sf.start()" at the end of this function!!
 		
-//	sf.scene.show( 'SceneShow' );
-//	sf.scene.focus( 'SceneShow' );
+//	sf.scene.show( 'Video' );
+//	sf.scene.focus( 'Video' );
 	
 	sf.scene.show( 'SceneMainSugestions' );
 	sf.scene.focus( 'SceneMainSugestions' );
