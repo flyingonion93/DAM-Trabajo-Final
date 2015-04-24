@@ -166,13 +166,6 @@ alert( "init.js loaded." );
 					sf.scene.hide( 'SceneMainSugestions' );
 					sf.scene.show( 'SceneLogin' );
 					sf.scene.focus( 'SceneLogin' );
-				//MODIFICAT
-				case sf.key.N0:
-					event.preventDefault();
-					sf.scene.hide( 'SceneMainSugestions' );
-					sf.scene.show( 'SceneSugestions' );
-					sf.scene.focus( 'SceneSugestions' );
-					break;
 				default:
 					alert( "handle default key event, key code(" + keyCode + ")" );
 					break;
@@ -212,43 +205,6 @@ alert( "init.js loaded." );
 					alert( "handle default key event, key code(" + keyCode + ")" );
 					break;
 			}
-		};
-		
-		SceneSceneSugestions.prototype.handleKeyDown = function ( keyCode ) {
-			alert( "SceneSceneSugestions.handleKeyDown(" + keyCode + ")" );
-			// TODO : write a key event handler when this scene gets focused
-			switch ( keyCode ) {
-				case sf.key.LEFT:
-					if( x == 0 )
-						setCurrent( -1, 0 );
-					else
-						setCurrent( x-1, y );
-					break;
-				case sf.key.RIGHT:
-					setCurrent( x+1, y );
-					break;
-				case sf.key.UP:
-					break;
-				case sf.key.DOWN:
-					break;
-				case sf.key.ENTER:
-					movie_id = current.attr( 'href' );
-					sf.scene.hide( 'SceneSugestions' );
-					sf.scene.show( 'SceneShow' );
-					sf.scene.focus( 'SceneShow' );
-					break;
-				case sf.key.TOOLS:
-					event.preventDefault();
-					sf.scene.hide( 'SceneSugestions' );
-					sf.scene.show( 'SceneLogin' );
-					sf.scene.focus( 'SceneLogin' );
-				default:
-					alert( "handle default key event, key code(" + keyCode + ")" );
-					break;
-			}
-			alert( 'key code: ' + keyCode );
-			alert( 'x value: ' + x );
-			alert( 'y value: ' + y );
 		};
 
 		return this;
