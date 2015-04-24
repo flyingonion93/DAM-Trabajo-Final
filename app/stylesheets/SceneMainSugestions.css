@@ -42,7 +42,7 @@
 }
 
 #movies .selected img {
-	-webkit-box-shadow: #009933;
-	-moz-box-shadow: #009933;
-	box-shadow: #009933;
+	-webkit-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+	-moz-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+	box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
 }
