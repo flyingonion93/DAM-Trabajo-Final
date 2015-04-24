@@ -240,6 +240,11 @@ alert( "init.js loaded." );
 					sf.scene.show( 'SceneMainSugestions' );
 					sf.scene.focus( 'SceneMainSugestions' );
 					break;
+				case sf.key.RED:
+					event.preventDefault();
+					sf.scene.hide( 'SceneNewReleases' );
+					sf.scene.show( 'SceneMainSugestions' );
+					sf.scene.focus( 'SceneMainSugestions' );
 				
 				default:
 					alert( "handle default key event, key code(" + keyCode + ")" );
