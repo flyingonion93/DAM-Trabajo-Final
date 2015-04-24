@@ -19,6 +19,7 @@ SceneSceneShow.prototype.initialize = function() {
 SceneSceneShow.prototype.handleShow = function(data, type) {
 	alert("SceneSceneShow.handleShow()");
 	// this function will be called when the scene manager show this scene
+	
 	$.ajax({
 		type : "GET",
 		crossDomain : true,
@@ -29,37 +30,25 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 			api_key : api_key
 		},
 		success : function(data) {
-
-			var fecha = data.release_date;
-
-			
-			$("#imagen")
-					.append(
-							'<img src="' + base_url + 'w342' + data.poster_path
-									+ '"/>');
+			var fecha = data.release_date;			
+			$("#imagen").append(
+					'<img src="' + base_url + 'w342' + data.poster_path+ '"/>');
 			$("#title").html(data.title + '  (' + fecha.substring(0, 4) + ')');
-			
 			$("#duration").html('<b>Duration:</b> ' + data.runtime + ' min');
-
 			$("#genres").html('<b>Genres:</b> ');
-
 			alert(data.genres.length);
-
-			var cont = data.genres.length;
+				var cont = data.genres.length
 
 			for ( var i = 0; i < cont; i++) {
-
 				if (i == cont - 1) {
 					$("#genres").append(data.genres[i].name);
-				}
+				
 
 				else {
 					$("#genres").append(data.genres[i].name + ', ');
 				}
 			}
-
-			$("#overview").html(data.overview);
-
+			$("#overview").append('<div class="expandableItem">'+data.overview+'</div>');
 		}
 	});
 
@@ -103,12 +92,8 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 				
 				if(data.crew[i].job == 'Director'){
 					$("#directed").html('<b>Director:</b> ' + data.crew[i].name);
-				}
-
-				
-
+				}	
 			}
-
 		}
 	});
 	
