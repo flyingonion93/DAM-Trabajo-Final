@@ -68,14 +68,12 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 		crossDomain : true,
 		async : true,
 		dataType : "json",
-		url : API + '/movie/' + movie_id + '/credits/',
+		url : API + '/movie/' + movie_id + '/credits',
 		data : {
 			api_key : api_key
 		},
 
-		success : function(data) {
-			
-			alert('Exito!');
+		success : function(data) {			
 			
 			$("#starring").html('<b>Starring:</b> ');
 
@@ -97,22 +95,53 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 
 			for ( var i = 0; i < data.crew.length; i++) {
 				
-				if(data.crew[i].job == 'Author' || data.crew[i].job == 'Director'){
+				if(data.crew[i].job == 'Writer' || data.crew[i].job == 'Screenplay' || data.crew[i].job == 'Novel' ){
 					
-					if (i == data.crew.length-1) {
-						$("#createdby").append(data.crew[i].name);
-					}
-
-					else {
-						$("#createdby").append(data.crew[i].name + ', ');
-					}
+					$("#createdby").append(data.crew[i].name + ', ');			
 					
+				}
+				
+				if(data.crew[i].job == 'Director'){
+					$("#directed").html('<b>Director:</b> ' + data.crew[i].name);
 				}
 
 				
 
 			}
 
+		}
+	});
+	
+	$.ajax({
+		type : "GET",
+		crossDomain : true,
+		async : true,
+		dataType : "json",
+		url : API + '/movie/' + movie_id + '/videos',
+		data : {
+			api_key : api_key
+		},
+
+		success : function(data) {	
+			movie_trailer_id = data.results[0].key;
+			
+			alert(movie_trailer_id);
+		}
+	});
+	
+	$.ajax({
+		type : "GET",
+		crossDomain : true,
+		async : true,
+		dataType : "json",
+		url : API + '/movie/' + movie_id + '/images',
+		data : {
+			api_key : api_key
+		},
+
+		success : function(data) {	
+			$("#gallerytitle").html('Gallery (' + data.backdrops.length + ')');
+			$("#gallerythumb").html('<img class="miniatura" src=' + base_url + 'w376' + data.backdrops[0].file_path + '/>' );
 		}
 	});
 };
@@ -127,6 +156,9 @@ SceneSceneShow.prototype.handleHide = function() {
 	$("#starring").html('');
 	$("#genres").html('');
 	$("#overview").html('');
+	$("#directed").html('');
+	$("#gallerytitle").html('');
+	$("#gallerythumb").html('' );
 
 };
 
