@@ -27,15 +27,15 @@
 	background-color: rgba(10,10,10,1);
 }*/
 
-.big-sugestion {
+/*.big-sugestion {
 	margin: 0;
 	margin-bottom:20px;
 }
 
-
+*/
 #moviesNR img {
 	width: 100%;
-	margin-top: 10px;
+	margin-top: 95px;
 }
 
 #moviesNR .selected img {
