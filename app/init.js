@@ -168,15 +168,13 @@ alert( "init.js loaded." );
 					sf.scene.hide( 'SceneMainSugestions' );
 					sf.scene.show( 'SceneLogin' );
 					sf.scene.focus( 'SceneLogin' );
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 				case sf.key.BLUE:
 					event.preventDefault();
 					sf.scene.hide( 'SceneMainSugestions' );
 					sf.scene.show( 'SceneNewReleases' );
 					sf.scene.focus( 'SceneNewReleases' );
-=======
+
 				//MODIFICAT
 				case sf.key.N0:
 					event.preventDefault();
@@ -184,8 +182,6 @@ alert( "init.js loaded." );
 					sf.scene.show( 'SceneSugestions' );
 					sf.scene.focus( 'SceneSugestions' );
 					break;
->>>>>>> origin/master
->>>>>>> b6f352e47bfe5707c338c9434529255dc4671f93
 				default:
 					alert( "handle default key event, key code(" + keyCode + ")" );
 					break;
