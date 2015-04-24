@@ -54,15 +54,34 @@ SceneSceneShow.prototype.handleShow = function ( data, type ) {
 	  	
 	  }
 	});
+	
+	$.ajax({
+		  type: "GET",
+		  crossDomain: true,
+		  async: true,
+		  dataType: "json",
+		  url: API+'/movie/'+movie_id,
+		  data: { api_key: api_key },
+		  
+		  success: function(data){
+			  
+			  
+		  	
+		  }
+		});
 };
 
 SceneSceneShow.prototype.handleHide = function () {
 	alert("SceneSceneShow.handleHide()");
 	// this function will be called when the scene manager hide this scene
-//	$("#cover").html('');
-//	$("#title").html('');
-//	$("#title").html('');
-//	$("#sinopsis").html('');	
+	
+	$("#imagen").html('');
+  	$("#title").html('');
+  	$("#createdby").html('');
+  	$("#starring").html('');
+  	$("#genres").html('');
+  	$("#overview").html('');
+	
 };
 
 SceneSceneShow.prototype.handleFocus = function () {
