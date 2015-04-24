@@ -37,8 +37,7 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 			$("#duration").html('<b>Duration:</b> ' + data.runtime + ' min');
 			$("#genres").html('<b>Genres:</b> ');
 			alert(data.genres.length);
-				var cont = data.genres.length
-
+			var cont = data.genres.length;
 			for ( var i = 0; i < cont; i++) {
 				if (i == cont - 1) {
 					$("#genres").append(data.genres[i].name + ', ');
