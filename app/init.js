@@ -254,9 +254,9 @@ alert( "init.js loaded." );
 						sf.scene.focus( 'SceneMainSugestions' );
 					}
 					else if(def == 2){
-						sf.scene.hide( 'SceneNewReleases' );
-						sf.scene.show( 'SceneMainSugestions' );
-						sf.scene.focus( 'SceneMainSugestions' );
+						sf.scene.hide( 'SceneShow' );
+						sf.scene.show( 'SceneNewReleases' );
+						sf.scene.focus( 'SceneNewReleases' );
 						}
 					break;
 				case sf.key.N1:
