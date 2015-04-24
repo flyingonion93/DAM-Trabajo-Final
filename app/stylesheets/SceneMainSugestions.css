@@ -10,9 +10,8 @@
 
 }
 
-#top {
-	background-color: red;	
-	margin-bottom: 35px;
+#movies {
+	margin-top: -25px;
 }
 
 #bottom {
@@ -21,13 +20,11 @@
 	bottom: -35px;
 }
 
-
-
 /*html, body {
 	width: 100%;
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
-	background-color: rgba(10,10,10,1);
+	background-color: green;
 }*/
 
 .big-sugestion {
@@ -45,7 +42,7 @@
 }
 
 #movies .selected img {
-	-webkit-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
-	-moz-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
-	box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+	-webkit-box-shadow: #009933;
+	-moz-box-shadow: #009933;
+	box-shadow: #009933;
 }
