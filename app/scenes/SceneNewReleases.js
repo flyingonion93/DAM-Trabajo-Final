@@ -30,15 +30,15 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	  	alert('success');
 	  	for (var i = 3; i >= 0; i--) {
 	  		if(i == 3 ){
-	  			$( "#movies" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+	  			$( "#moviesNR" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 	  		} else {
 //	  			if( i == 2 ) $( "#movies" ).append( '</div><div class="small-sugestions-row"' );
 //		  		if( i == 0 ) $( "#movies" ).append( '</div>' );	  		
-		  		$( "#movies" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+		  		$( "#moviesNR" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
 	  		}	  		
 	  	}
 	  	
-	  	$( '#movies div.item' ).keynav();
+	  	$( '#moviesNR div.item' ).keynav();
 	  },
 	  error: function(){
 	  	alert( 'error' );
