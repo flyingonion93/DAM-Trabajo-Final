@@ -168,13 +168,13 @@ alert( "init.js loaded." );
 					sf.scene.hide( 'SceneMainSugestions' );
 					sf.scene.show( 'SceneLogin' );
 					sf.scene.focus( 'SceneLogin' );
-
+					break;
 				case sf.key.BLUE:
 					event.preventDefault();
 					sf.scene.hide( 'SceneMainSugestions' );
 					sf.scene.show( 'SceneNewReleases' );
 					sf.scene.focus( 'SceneNewReleases' );
-
+					break;
 				//MODIFICAT
 				case sf.key.N0:
 					event.preventDefault();
