@@ -43,7 +43,6 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 				if (i == cont - 1) {
 					$("#genres").append(data.genres[i].name + ', ');
 				}
-
 				else {
 					$("#genres").append(data.genres[i].name + ', ');
 				}
