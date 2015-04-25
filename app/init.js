@@ -482,56 +482,6 @@ alert("init.js loaded.");
 		return this;
 	};
 	
-	SceneSceneVideo.prototype.handleKeyDown = function (keyCode) {
-		alert("SceneSceneVideo.handleKeyDown(" + keyCode + ")");
-		// TODO : write an key event handler when this scene get focued
-		switch (keyCode) {
-			case sf.key.LEFT:
-				break;
-			case sf.key.RIGHT:
-				break;
-			case sf.key.UP:
-				break;
-			case sf.key.DOWN:
-				break;
-			case sf.key.ENTER:
-				break;
-			case sf.key.RETURN:
-				sf.scene.hide('SceneVideo');
-				sf.scene.show('SceneShow');
-				sf.scene.focus('SceneShow');
-				break;
-			default:
-				alert("handle default key event, key code(" + keyCode + ")");
-				break;
-		}		
-		SceneSceneFoto.prototype.handleKeyDown = function(keyCode) {
-			alert("SceneSceneFoto.handleKeyDown(" + keyCode + ")");
-			// TODO : write an key event handler when this scene get focued
-			switch (keyCode) {
-			case sf.key.LEFT:
-				break;
-			case sf.key.RIGHT:
-				break;
-			case sf.key.UP:
-				scrollUp();
-				break;
-			case sf.key.DOWN:
-				scrollDown();
-				break;
-			case sf.key.ENTER:
-				break;
-			case sf.key.RETURN:
-				sf.scene.hide('SceneFoto');
-				sf.scene.show('SceneShow');
-				sf.scene.focus('SceneShow');
-				break;
-			default:
-				alert("handle default key event, key code(" + keyCode + ")");
-				break;
-			}
-		};	
-	};
 
 })(jQuery, window, document);
 

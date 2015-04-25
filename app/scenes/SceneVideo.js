@@ -48,8 +48,13 @@ SceneSceneVideo.prototype.handleKeyDown = function (keyCode) {
 			break;
 		case sf.key.ENTER:
 			break;
+		case sf.key.RETURN:
+			sf.scene.hide('SceneVideo');
+			sf.scene.show('SceneShow');
+			sf.scene.focus('SceneShow');
+			break;
 		default:
 			alert("handle default key event, key code(" + keyCode + ")");
 			break;
-	}
+	}		
 };

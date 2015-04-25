@@ -73,18 +73,23 @@ SceneSceneFoto.prototype.handleKeyDown = function(keyCode) {
 	case sf.key.RIGHT:
 		break;
 	case sf.key.UP:
-		//scrollUp();
+		scrollUp();
 		break;
 	case sf.key.DOWN:
-		//scrollDown();
+		scrollDown();
 		break;
 	case sf.key.ENTER:
+		break;
+	case sf.key.RETURN:
+		sf.scene.hide('SceneFoto');
+		sf.scene.show('SceneShow');
+		sf.scene.focus('SceneShow');
 		break;
 	default:
 		alert("handle default key event, key code(" + keyCode + ")");
 		break;
 	}
-};
+};	
 
 var scrolled = 0;
 
