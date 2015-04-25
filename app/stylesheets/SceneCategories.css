@@ -7,3 +7,25 @@
 	background-color : #ffffff;
 	background-image : url('');
 }
+
+#bottomCategories {
+	width: 100%;
+	position: absolute;
+	bottom: -35px;
+}
+
+#bottomCategories .btn {
+	height: 85%;
+	margin-bottom: 15px;
+}
+
+#moviesCategories img {
+	width: 100%;
+	/*margin-top: 10px;*/
+}
+
+#moviesCategories .selected img {
+	-webkit-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+	-moz-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+	box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+}

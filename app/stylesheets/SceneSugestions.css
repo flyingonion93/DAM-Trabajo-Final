@@ -14,13 +14,13 @@
 	margin-bottom: 35px;
 }*/
 
-#bottom {
+#bottomSugestions {
 	width: 100%;
 	position: absolute;
 	bottom: -35px;
 }
 
-#bottom .btn {
+#bottomSugestions .btn {
 	height: 85%;
 	margin-bottom: 15px;
 }
