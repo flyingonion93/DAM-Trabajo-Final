@@ -8,6 +8,7 @@ var movie_trailer_id = '';
 // var def = 1;
 var scene_name = '';
 var genre_id='';
+var genre_filter='';
 var option_selected;
 var readmoreCond = true;
 var username = 'ambrosio_rapidofurioso';
@@ -24,8 +25,8 @@ function onStart() {
 	
 	login(username, password);
 	
-	sf.scene.show('SceneMainSugestions');
-	sf.scene.focus('SceneMainSugestions');
+	sf.scene.show('SceneUserTest');
+	sf.scene.focus('SceneUserTest');
 
 }
 function onDestroy() {
@@ -430,7 +431,7 @@ alert("init.js loaded.");
 					setCurrent( x-6, y );
 				else if( x == 5 )
 					setCurrent( 19, y );
-				else if( x == 0 )
+				else if( x == 0 || x == 20 )
 					setCurrent( 14, y );
 				else
 					setCurrent(x-1,y);
@@ -438,15 +439,20 @@ alert("init.js loaded.");
 				setCurrent(x-1,y);
 				break;
 			case sf.key.DOWN:
-				if( x == 4 || x == 9 || x == 14 )
+				if( x == 4 || x == 9 )
 					setCurrent( x+6, y );
-				else if( x == 19 )
-					setCurrent( 5, y );
+				else if( x == 14 || x == 19 )
+					setCurrent( 20, y );
 				else
 					setCurrent(x+1,y);
 				break;
 			case sf.key.ENTER:
-				alert(current.attr('href'));
+				var newAppend = current.attr( 'id') + ',';
+				if( newAppend == 'okButton,')
+					generateFilter();
+				else
+					genre_id += newAppend;
+				alert(genre_id);
 				break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
@@ -485,6 +491,39 @@ alert("init.js loaded.");
 	};
 
 })(jQuery, window, document);
+
+function generateFilter(){
+	var helpList = genre_id.split(",");
+	var forbiddenValues = {};
+	var good;
+	var k = 0;
+	for( var i = 0; i < helpList.length - 1; i++ ){
+		good = false;
+		for( var j = i +1; j < helpList.length - 1; j++ ){
+			if( inList( forbiddenValues, j ) == true ){
+				continue;
+			}
+			if( helpList[i] == helpList[j] ){
+				good = false;
+				forbiddenValues[k] = j;
+				k++;
+				break;
+			}
+			good = true;
+		}			
+		if( good == true )
+			genre_filter += helpList[i]+'|';
+	}
+	alert( 'Return value: ' + genre_filter );
+} 
+
+function inList( list, value ){
+	for( var i = 0; i < list.length - 1; i++ ){
+		if( list[i] == value )
+			return true;
+	}
+	return false;
+}
 
 function login(username, password){
 	$.ajax({
