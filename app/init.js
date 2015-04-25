@@ -15,8 +15,7 @@ function onStart () {
 //	sf.scene.focus( 'SceneVideo' );
 	
 	sf.scene.show( 'SceneMainSugestions' );
-	sf.scene.focus( 'SceneMainSugestions' );
-	
+	sf.scene.focus( 'SceneMainSugestions' );	
 }
 function onDestroy () {
 	//stop your XHR or Ajax operation and put codes to destroy your application here	
