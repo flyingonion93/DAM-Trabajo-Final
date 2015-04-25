@@ -130,6 +130,8 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 			$("#gallerythumb").html('<img class="miniatura" src=' + base_url + 'w376' + data.backdrops[0].file_path + '/>' );
 		}
 	});
+	
+	$( '#container div.item' ).keynav();
 };
 
 SceneSceneShow.prototype.handleHide = function() {
