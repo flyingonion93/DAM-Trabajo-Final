@@ -30,7 +30,7 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	  crossDomain: true,
 	  async: true,
 	  dataType: "json",
-	  url: API+"/discover/movie?api_key="+api_key+"?sort_by=release_date.asc",//"?sort_by=release_date.asc",
+	  
 	//  url: API+"/discover/movie?sort_by=release_date.asc",
 	  success: function(data){
 		//sort( data )"?sort_by=release_date.asc
