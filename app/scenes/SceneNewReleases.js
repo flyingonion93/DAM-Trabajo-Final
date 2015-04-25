@@ -30,7 +30,7 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	  	alert('success');
 	  	for (var i = 3; i > 0; i--) {
 	  		
-	  			$( "#moviesNR" ).append( '<div class="item col-xs-3" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+	  			$( "#moviesNR" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 	  		
 	  	}
 	  	$( '#moviesNR div.item' ).keynav();
