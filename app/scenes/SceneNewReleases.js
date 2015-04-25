@@ -12,6 +12,7 @@ function SceneSceneNewReleases() {
 
 SceneSceneNewReleases.prototype.initialize = function () {
 	var today = new Date();
+	var pelis = new String;
 	alert("SceneSceneNewReleases.initialize()");
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
@@ -39,7 +40,7 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	  	alert('success');//?api_key="+api_key,
 	  	for (var i = 9; i > 0; i--) {
 	  		
-	  			$( "#moviesNR" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+	  			pelis.push( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 	  		
 	  	}
 	  	$( '#moviesNR div.item' ).keynav();
@@ -65,7 +66,13 @@ SceneSceneNewReleases.prototype.handleHide = function () {
 SceneSceneNewReleases.prototype.handleFocus = function () {
 	alert("SceneSceneNewReleases.handleFocus()");
 	scene_name = 'SceneNewReleases';
-	
+	if(y>=7)
+	{ ys=1;	}
+	else{ys=y;}
+	for(var j=ys;j <ys+2; j++){
+	$( "#moviesNR" ).append(pelis[j]);	
+
+	}
 };
 
 SceneSceneNewReleases.prototype.handleBlur = function () {
