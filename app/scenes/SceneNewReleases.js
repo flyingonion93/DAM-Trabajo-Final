@@ -38,10 +38,9 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	  success: function(data){
 		//sort( data )"?sort_by=release_date.asc
 	  	alert('success');//?api_key="+api_key,
-	  	for (var i = 9; i > 0; i--) {
+	  	for (var i = 15; i > 0; i--) {
 	  		
-	  			pelis.push( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
-	  		
+	  		$( "#moviesNR" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 	  	}
 	  	$( '#moviesNR div.item' ).keynav();
 	  },
@@ -66,20 +65,36 @@ SceneSceneNewReleases.prototype.handleHide = function () {
 SceneSceneNewReleases.prototype.handleFocus = function () {
 	alert("SceneSceneNewReleases.handleFocus()");
 	scene_name = 'SceneNewReleases';
-	if(y>=7)
-	{ ys=1;	}
-	else{ys=y;}
-	for(var j=ys;j <ys+2; j++){
-	$( "#moviesNR" ).append(pelis[j]);	
-
-	}
+	
 };
 
 SceneSceneNewReleases.prototype.handleBlur = function () {
 	alert("SceneSceneNewReleases.handleBlur()");
 	// this function will be called when the scene manager move focus to another scene from this scene
 };
+/*
+var scrolled = 0;
 
+function scrollDown() {
+	
+	alert("Bajo!");
 
+	scrolled = scrolled + 300;
 
+	$("#moviesNR").animate({
+		scrollTop : scrolled
+	});
+
+}
+
+function scrollUp() {
+	
+	scrolled=scrolled-300;
+	
+	$("#moviesNR").animate({
+	        scrollTop:  scrolled
+	   });
+}
+
+*/
 
