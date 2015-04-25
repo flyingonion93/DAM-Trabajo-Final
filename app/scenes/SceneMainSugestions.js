@@ -20,7 +20,7 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 	  crossDomain: true,
 	  async: true,
 	  dataType: "json",
-	  url: API+"/discover/movie?api_key="+api_key+"&with_genres=878|18",
+	  url: API+"/discover/movie?api_key="+api_key+"&with_genres=",
 	  success: function(data){
 		//sort( data )
 	  	alert('success');

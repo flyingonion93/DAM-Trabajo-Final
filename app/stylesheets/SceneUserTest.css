@@ -12,8 +12,15 @@
 #questions .item {
 	text-align: center;
 	background-color: gray;
-	font-size: 35px;
+	font-size: 30px;
 	margin: 10px;
+}
+
+#lastPart .item {
+	left-margin: 200px;
+	text-align: center;
+	font-size: 30px;
+	background-color: gray;
 }
 
 div.item.genre.selected{
