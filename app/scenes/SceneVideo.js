@@ -9,14 +9,13 @@ SceneSceneVideo.prototype.initialize = function () {
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
-	
-	$("#container").html('<iframe src = "http://www.youtube.com/embed/' + movie_trailer_id + '?hd=1?&autoplay=1" width="1280px" height="720px"></iframe>');
-
 };
 
 SceneSceneVideo.prototype.handleShow = function (data) {
 	alert("SceneSceneVideo.handleShow()");
 	// this function will be called when the scene manager show this scene
+	$("#videocont").html('<iframe src = "http://www.youtube.com/embed/' + movie_trailer_id + '?hd=1?&autoplay=1" width="1280px" height="720px"></iframe>');
+
 };
 
 SceneSceneVideo.prototype.handleHide = function () {
