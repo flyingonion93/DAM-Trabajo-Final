@@ -86,6 +86,12 @@ div#gallery.selected {
 	box-shadow: 0px 0px 0px 5px rgba(214, 74, 50, 1);
 }
 
+#readmore.selected button {
+	-webkit-box-shadow: 0px 0px 0px 5px rgba(214, 74, 50, 1);
+	-moz-box-shadow: 0px 0px 0px 5px rgba(214, 74, 50, 1);
+	box-shadow: 0px 0px 0px 5px rgba(214, 74, 50, 1);
+}
+
 .ellipsis {
 	height:100px;
 	text-overflow: ellipsis;
