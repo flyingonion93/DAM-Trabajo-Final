@@ -4,6 +4,12 @@ function SceneSceneNewReleases() {
 
 };
 
+
+
+
+	
+		
+
 SceneSceneNewReleases.prototype.initialize = function () {
 	alert("SceneSceneNewReleases.initialize()");
 	// this function will be called only once when the scene manager show this scene first time
