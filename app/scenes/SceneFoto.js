@@ -40,11 +40,17 @@ SceneSceneFoto.prototype.handleShow = function(data) {
 			}
 		}
 	});
+	
+	alert($("#gallerycount").height());
 };
 
 SceneSceneFoto.prototype.handleHide = function() {
 	alert("SceneSceneFoto.handleHide()");
 	// this function will be called when the scene manager hide this scene
+	
+	$("#gallerycont").html('');
+	scrolled=0;
+	
 };
 
 SceneSceneFoto.prototype.handleFocus = function() {
@@ -82,9 +88,7 @@ SceneSceneFoto.prototype.handleKeyDown = function(keyCode) {
 
 var scrolled = 0;
 
-function scrollDown() {
-	
-	alert("Bajo!");
+function scrollDown() {	
 
 	scrolled = scrolled + 300;
 
@@ -96,7 +100,9 @@ function scrollDown() {
 
 function scrollUp() {
 	
-	scrolled=scrolled-300;
+	if (scrolled > 0){
+		scrolled=scrolled-300;
+	}
 	
 	$("#gallerycont").animate({
 	        scrollTop:  scrolled

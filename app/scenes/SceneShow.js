@@ -228,12 +228,12 @@ function add_favorites(){
 }
 
 function openSlide(){
-	$(".ellipsis").css("height", "330px");
+	$(".ellipsis").css("height", "300px");
 	readmoreCond = false;
 }
 
 function closeSlide(){
-	$(".ellipsis").css("height", "100px");
+	$(".ellipsis").css("height", "90px");
 	readmoreCond = true;
 }
 

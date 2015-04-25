@@ -93,7 +93,7 @@ div#gallery.selected {
 }
 
 .ellipsis {
-	height:100px;
+	height:80px;
 	text-overflow: ellipsis;
 	/* Required for text-overflow to do anything */
 	
