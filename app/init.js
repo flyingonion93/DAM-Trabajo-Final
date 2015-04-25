@@ -10,17 +10,22 @@ var scene_name = '';
 var genre_id='';
 var option_selected;
 var readmoreCond = true;
+var username = 'ambrosio_rapidofurioso';
+var password = 'johanderohan';
+
 
 function onStart() {
 	// TODO : Add your Initialize code here
 	// NOTE : In order to start your app, call "sf.start()" at the end of this
 	// function!!
 	
-	sf.scene.show('SceneUserTest');
-	sf.scene.focus('SceneUserTest');
+//	sf.scene.show('SceneUserTest');
+//	sf.scene.focus('SceneUserTest');
 	
-//	sf.scene.show('SceneMainSugestions');
-//	sf.scene.focus('SceneMainSugestions');
+	login(username, password);
+	
+	sf.scene.show('SceneMainSugestions');
+	sf.scene.focus('SceneMainSugestions');
 
 }
 function onDestroy() {
@@ -455,3 +460,48 @@ alert("init.js loaded.");
 	};
 
 })(jQuery, window, document);
+
+function login(username, password){
+	$.ajax({
+		  type: "GET",
+		  crossDomain: true,
+		  async: true,
+		  dataType: "json",
+		  url: API+"/authentication/token/new",
+		  data: { api_key: api_key },
+		  success: function(data){
+		  	var request_token = data.request_token;
+
+		  	$.ajax({
+			  type: "GET",
+			  crossDomain: true,
+			  async: true,
+			  dataType: "json",
+			  url: API+"/authentication/token/validate_with_login",
+			  data: { api_key: api_key, request_token: request_token, username: username, password: password },
+			  success: function(data){
+
+			  		$.ajax({
+					  type: "GET",
+					  crossDomain: true,
+					  async: true,
+					  dataType: "json",
+					  url: API+"/authentication/session/new",
+					  data: { api_key: api_key, request_token: request_token },
+					  success: function(data){
+
+					  	session_id = data.session_id;
+		    			//Utilizamos la caché del navegador
+		    			localStorage.setItem('session_id', session_id);
+		    			
+		    			alert(session_id);
+					  	
+					  }
+					});
+			  	
+			  }
+			});
+
+		  }
+		});
+}
