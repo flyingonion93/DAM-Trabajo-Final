@@ -9,7 +9,7 @@
 	color: white;
 }
 
-.item {
+#questions .item {
 	text-align: center;
 	background-color: gray;
 	font-size: 35px;
