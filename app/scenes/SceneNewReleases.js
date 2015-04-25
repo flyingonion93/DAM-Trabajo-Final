@@ -64,7 +64,8 @@ SceneSceneNewReleases.prototype.handleHide = function () {
 
 SceneSceneNewReleases.prototype.handleFocus = function () {
 	alert("SceneSceneNewReleases.handleFocus()");
-	// this function will be called when the scene manager focus this scene
+	scene_name = 'SceneNewReleases';
+	
 };
 
 SceneSceneNewReleases.prototype.handleBlur = function () {
