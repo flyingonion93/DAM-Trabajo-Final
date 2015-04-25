@@ -11,6 +11,7 @@ function SceneSceneNewReleases() {
 		
 
 SceneSceneNewReleases.prototype.initialize = function () {
+	var today = new Date();
 	alert("SceneSceneNewReleases.initialize()");
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
@@ -31,6 +32,7 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	  async: true,
 	  dataType: "json",
 	  
+	  url: API+"/discover/movie?api_key="+api_key+"&release_date.gte="+today.getFullYear+"-"+(today.getMonth()+1)+"-"+(today.getDate()+1),//"?sort_by=release_date.asc",
 	//  url: API+"/discover/movie?sort_by=release_date.asc",
 	  success: function(data){
 		//sort( data )"?sort_by=release_date.asc
