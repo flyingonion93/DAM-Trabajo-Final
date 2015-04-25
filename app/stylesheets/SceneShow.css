@@ -71,7 +71,7 @@ a.navbar-brand-pie{
 	margin-left: 60px;
 }
 
-#container .selected btn{
+#container .selected div{
 	-webkit-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
 	-moz-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
 	box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
