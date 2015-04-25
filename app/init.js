@@ -13,6 +13,7 @@ function onStart () {
 		
 //	sf.scene.show( 'SceneVideo' );
 //	sf.scene.focus( 'SceneVideo' );
+	
 	sf.scene.show( 'SceneMainSugestions' );
 	sf.scene.focus( 'SceneMainSugestions' );
 	
