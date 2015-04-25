@@ -5,7 +5,8 @@ var base_url = 'http://image.tmdb.org/t/p/';
 var movie_id = '';
 var firstUse = true;
 var movie_trailer_id = '';
-var def = 1;
+//var def = 1;
+var scene_name= '';
 
 function onStart () {
 	// TODO : Add your Initialize code here
@@ -124,7 +125,7 @@ alert( "init.js loaded." );
 
 		SceneSceneMainSugestions.prototype.handleKeyDown = function ( keyCode ) {
 			alert( "SceneSceneMainSugestions.handleKeyDown(" + keyCode + ")" );
-			def = 1;
+			//def = 1;
 			// TODO : write a key event handler when this scene gets focused
 			switch ( keyCode ) {
 				case sf.key.LEFT:
@@ -193,7 +194,7 @@ alert( "init.js loaded." );
 		
 		SceneSceneSugestions.prototype.handleKeyDown = function ( keyCode ) {
 			alert( "SceneSceneSugestions.handleKeyDown(" + keyCode + ")" );
-			def = 2;
+			//def = 2;
 			// TODO : write a key event handler when this scene gets focused
 			switch ( keyCode ) {
 				case sf.key.LEFT:
@@ -242,7 +243,7 @@ alert( "init.js loaded." );
 
 		SceneSceneNewReleases.prototype.handleKeyDown = function ( keyCode ) {
 			alert( "SceneSceneNewReleases.handleKeyDown(" + keyCode + ")" );
-			def = 3;
+			//def = 3;
 			// TODO : write a key event handler when this scene gets focused
 			switch ( keyCode ) {
 				case sf.key.LEFT:
@@ -311,21 +312,26 @@ alert( "init.js loaded." );
 				case sf.key.RETURN:
 					event.preventDefault();
 					movie_id = '';
-					if(def == 1){
-						sf.scene.hide( 'SceneShow' );
-						sf.scene.show( 'SceneMainSugestions' );
-						sf.scene.focus( 'SceneMainSugestions' );
-					}
-					else if(def == 2){
-						sf.scene.hide( 'SceneShow' );
-						sf.scene.show( 'SceneSugestions' );
-						sf.scene.focus( 'SceneSugestions' );
-						}
-					else if(def == 3){
-						sf.scene.hide( 'SceneShow' );
-						sf.scene.show( 'SceneNewReleases' );
-						sf.scene.focus( 'SceneNewReleases' );
-						}
+					
+					sf.scene.hide( 'SceneShow' );
+					sf.scene.show( scene_name );
+					sf.scene.focus( scene_name );
+					
+//					if(def == 1){
+//						sf.scene.hide( 'SceneShow' );
+//						sf.scene.show( 'SceneMainSugestions' );
+//						sf.scene.focus( 'SceneMainSugestions' );
+//					}
+//					else if(def == 2){
+//						sf.scene.hide( 'SceneShow' );
+//						sf.scene.show( 'SceneSugestions' );
+//						sf.scene.focus( 'SceneSugestions' );
+//						}
+//					else if(def == 3){
+//						sf.scene.hide( 'SceneShow' );
+//						sf.scene.show( 'SceneNewReleases' );
+//						sf.scene.focus( 'SceneNewReleases' );
+//						}
 					break;
 				case sf.key.N1:
 					puntuar( 1 * 2 );

@@ -12,7 +12,7 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	alert( firstUse );
 	alert(api_key);
 	session_id = localStorage.getItem('session_id');
-	alert(session_id);
+	alert(session_id);	
 	
 	if( firstUse == true ) {
 		$('#popupTest').sfPopup('show');
@@ -44,6 +44,8 @@ SceneSceneNewReleases.prototype.initialize = function () {
 SceneSceneNewReleases.prototype.handleShow = function (data) {
 	alert("SceneSceneNewReleases.handleShow()");
 	// this function will be called when the scene manager show this scene
+	
+	scene_name = 'SceneNewReleases';
 };
 
 SceneSceneNewReleases.prototype.handleHide = function () {

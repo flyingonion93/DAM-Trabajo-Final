@@ -13,6 +13,8 @@ SceneSceneShow.prototype.initialize = function() {
 	// scene HTML and CSS will be loaded before this function is called
 
 	// $("#duration").html('Duration: 70');
+	
+	alert("HOOOOOLA" + scene_name);
 
 };
 

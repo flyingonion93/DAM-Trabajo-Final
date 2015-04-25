@@ -12,7 +12,7 @@ SceneSceneSugestions.prototype.initialize = function () {
 	alert(api_key);
 	session_id = localStorage.getItem('session_id');
 	alert(session_id);
-	
+		
 	alert(API+"/discover/movie?api_key="+api_key);
 	$.ajax({
 	  type: "GET",
@@ -37,7 +37,9 @@ SceneSceneSugestions.prototype.initialize = function () {
 
 SceneSceneSugestions.prototype.handleShow = function (data) {
 	alert("SceneSceneSugestions.handleShow()");
-	// this function will be called when the scene manager show this scene
+	// this function will be called when the scene manager show this scene	
+
+	scene_name = 'SceneSugestions';
 };
 
 SceneSceneSugestions.prototype.handleHide = function () {

@@ -9,12 +9,16 @@ SceneSceneMainSugestionsCategories.prototype.initialize = function () {
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
+	
+	
 
 };
 
 SceneSceneMainSugestionsCategories.prototype.handleShow = function (data) {
 	alert("SceneSceneMainSugestionsCategories.handleShow()");
 	// this function will be called when the scene manager show this scene
+	
+	scene_name = 'SceneCategories';
 };
 
 SceneSceneMainSugestionsCategories.prototype.handleHide = function () {
