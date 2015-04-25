@@ -170,13 +170,13 @@ alert( "init.js loaded." );
 					sf.scene.show( 'SceneLogin' );
 					sf.scene.focus( 'SceneLogin' );
 					break;
-				case sf.key.BLUE:
+				case sf.key.GREEN:
 					event.preventDefault();
 					sf.scene.hide( 'SceneMainSugestions' );
 					sf.scene.show( 'SceneNewReleases' );
 					sf.scene.focus( 'SceneNewReleases' );
 					break;
-				//MODIFICAT
+				//PROVISIONAL
 				case sf.key.N0:
 					event.preventDefault();
 					sf.scene.hide( 'SceneMainSugestions' );
@@ -219,7 +219,7 @@ alert( "init.js loaded." );
 					sf.scene.show( 'SceneMainSugestions' );
 					sf.scene.focus( 'SceneMainSugestions' );
 					break;
-				case sf.key.BLUE:
+				case sf.key.GREEN:
 					event.preventDefault();
 					sf.scene.hide( 'SceneSugestions' );
 					sf.scene.show( 'SceneNewReleases' );
@@ -282,14 +282,13 @@ alert( "init.js loaded." );
 					sf.scene.show( 'SceneShow' );
 					sf.scene.focus( 'SceneShow' );
 					break;
-					
-				case sf.key.RETURN:
+				/*case sf.key.RETURN:
 					event.preventDefault();
 					movie_id = '';
 					sf.scene.hide( 'SceneNewReleases' );
 					sf.scene.show( 'SceneMainSugestions' );
 					sf.scene.focus( 'SceneMainSugestions' );
-					break;
+					break;*/
 				case sf.key.RED:
 					event.preventDefault();
 					sf.scene.hide( 'SceneNewReleases' );
