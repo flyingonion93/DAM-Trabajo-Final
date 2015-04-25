@@ -9,6 +9,7 @@ var movie_trailer_id = '';
 var scene_name = '';
 var genre_id='';
 var option_selected;
+var readmoreCond = true;
 
 function onStart() {
 	// TODO : Add your Initialize code here
@@ -359,6 +360,16 @@ alert("init.js loaded.");
 				
 				if(option_selected == 'favorites'){
 					add_favorites();
+				}
+				
+				if(option_selected == 'readmore'){
+					
+					if(readmoreCond) {
+						openSlide();
+					}
+					else{
+						closeSlide();
+					}
 				}
 				
 				break;

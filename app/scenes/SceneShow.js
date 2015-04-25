@@ -190,6 +190,16 @@ function add_favorites(){
 	alert('Favorites');
 }
 
+function openSlide(){
+	$(".ellipsis").css("height", "330px");
+	readmoreCond = false;
+}
+
+function closeSlide(){
+	$(".ellipsis").css("height", "100px");
+	readmoreCond = true;
+}
+
 // function puntuar (puntuacion) {
 // $.ajax({
 // type: "POST",
