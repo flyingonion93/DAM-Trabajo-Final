@@ -37,7 +37,7 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	  success: function(data){
 		//sort( data )"?sort_by=release_date.asc
 	  	alert('success');//?api_key="+api_key,
-	  	for (var i = 3; i > 0; i--) {
+	  	for (var i = 9; i > 0; i--) {
 	  		
 	  			$( "#moviesNR" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 	  		
