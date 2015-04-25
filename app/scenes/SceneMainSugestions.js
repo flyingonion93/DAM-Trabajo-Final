@@ -14,10 +14,6 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 	session_id = localStorage.getItem('session_id');
 	alert(session_id);
 	
-	if( firstUse == true ) {
-		$('#popupTest').sfPopup('show');
-	}
-	
 	alert(API+"/discover/movie?api_key="+api_key);
 	$.ajax({
 	  type: "GET",
