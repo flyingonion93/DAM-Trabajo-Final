@@ -32,10 +32,11 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 			api_key : api_key
 		},
 		success : function(data) {
-			var fecha = data.release_date;			
-			$("#imagen").append(
-					'<img src="' + base_url + 'w342' + data.poster_path+ '"/>');
-			$("#title").html(data.title + '  (' + fecha.substring(0, 4) + ')');
+			var fecha = data.release_date;
+			
+			alert(data.title + '  (' + fecha.substring(0, 4) + ')');
+			$("#imagen").append('<img src="' + base_url + 'w342' + data.poster_path+ '"/>');
+			$("#title").append(data.title + '  (' + fecha.substring(0, 4) + ')');
 			$("#duration").html('<b>Duration:</b> ' + data.runtime + ' min');
 			$("#genres").html('<b>Genres:</b> ');
 			alert(data.genres.length);
