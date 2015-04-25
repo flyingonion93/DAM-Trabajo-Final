@@ -184,10 +184,49 @@ SceneSceneShow.prototype.handleKeyDown = function(keyCode) {
 
 function add_watchlist(){
 	alert('Watchlist');
+	
+	$.ajax({
+		type : "POST",
+		crossDomain : true,
+		async : true,
+		dataType : "json",
+		url : API + '/movie/' + movie_id + '/rating',
+		data : {
+			api_key : api_key,
+			session_id : session_id,
+			value : puntuacion,
+			media_type: 'movie',
+			media_id: movie_id,
+			watchlist: 'true'
+		},
+		success : function(data) {
+			console.log(data);
+		}
+	});
+	
 }
 
 function add_favorites(){
 	alert('Favorites');
+	
+	$.ajax({
+		type : "POST",
+		crossDomain : true,
+		async : true,
+		dataType : "json",
+		url : API + '/movie/' + movie_id + '/rating',
+		data : {
+			api_key : api_key,
+			session_id : session_id,
+			value : puntuacion,
+			media_type: 'movie',
+			media_id: movie_id,
+			favorite: 'true'
+		},
+		success : function(data) {
+			console.log(data);
+		}
+	});
 }
 
 function openSlide(){
@@ -200,16 +239,20 @@ function closeSlide(){
 	readmoreCond = true;
 }
 
-// function puntuar (puntuacion) {
-// $.ajax({
-// type: "POST",
-// crossDomain: true,
-// async: true,
-// dataType: "json",
-// url: API+'/movie/'+id+'/rating',
-// data: { api_key: api_key, session_id: session_id, value: puntuacion },
-// success: function(data){
-// console.log(data);
-// }
-// });
-// };
+ function puntuar(puntuacion) {
+	$.ajax({
+		type : "POST",
+		crossDomain : true,
+		async : true,
+		dataType : "json",
+		url : API + '/movie/' + movie_id + '/rating',
+		data : {
+			api_key : api_key,
+			session_id : session_id,
+			value : puntuacion
+		},
+		success : function(data) {
+			console.log(data);
+		}
+	});
+};
