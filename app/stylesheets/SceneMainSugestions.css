@@ -11,7 +11,7 @@
 }
 
 #movies {
-	margin-top: -25px;
+	margin-top: -15px;
 }
 
 #bottom {
@@ -39,6 +39,11 @@
 #movies img {
 	width: 100%;
 	margin-top: 10px;
+}
+
+#movies .panel {
+	background-color: red;
+	color: white;
 }
 
 #movies .selected img {

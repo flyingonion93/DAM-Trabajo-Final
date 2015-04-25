@@ -1,7 +1,6 @@
 alert('SceneSceneMainSugestions.js loaded');
 
 function SceneSceneMainSugestions() {
-
 };
 
 SceneSceneMainSugestions.prototype.initialize = function () {
@@ -24,8 +23,8 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 	  success: function(data){
 		//sort( data )
 	  	alert('success');
-	  	for (var i = 7; i >= 0; i--) {
-	  		if(i == 7 ){
+	  	for (var i = 8; i >= 0; i--) {
+	  		if(i == 8 ){
 	  			$( "#movies" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 	  		} else { 		
 		  		$( "#movies" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
