@@ -20,13 +20,10 @@ function onStart() {
 	// NOTE : In order to start your app, call "sf.start()" at the end of this
 	// function!!
 	
-//	sf.scene.show('SceneUserTest');
-//	sf.scene.focus('SceneUserTest');
-	
 	login(username, password);
 	
-	//sf.scene.show('SceneUserTest');
-	//sf.scene.focus('SceneUserTest');
+//	sf.scene.show('SceneUserTest');
+//	sf.scene.focus('SceneUserTest');
 	sf.scene.show('SceneMainSugestions');
 	sf.scene.focus('SceneMainSugestions');
 
@@ -513,28 +510,34 @@ alert("init.js loaded.");
 })(jQuery, window, document);
 
 function generateFilter(){
+	var obtainedFilter = '';
 	var helpList = genre_id.split(",");
-	var forbiddenValues = {};
-	var good;
+	var indexValues = {};
+	var checkedValues = {};
 	var k = 0;
+	var count;
 	for( var i = 0; i < helpList.length - 1; i++ ){
-		good = false;
-		for( var j = i +1; j < helpList.length - 1; j++ ){
-			if( inList( forbiddenValues, j ) == true ){
-				continue;
-			}
-			if( helpList[i] == helpList[j] ){
-				good = false;
-				forbiddenValues[k] = j;
-				k++;
-				break;
-			}
-			good = true;
-		}			
-		if( good == true )
-			genre_filter += helpList[i]+'|';
+		count = 0;
+		if( inList( indexValues, helpList[i] ) ) //We avoid repeated values
+			continue;
+		indexValues[k] = helpList[i];
+		for( var j = 0; j < helpList.length - 1; j++ ){
+			if( indexValues[k] == helpList[j] )
+				count++;
+		}
+		checkedValues[k] = count;
+		k++;
 	}
-	alert( 'Return value: ' + genre_filter );
+	for( var i= 0; i < indexValues; i++ )
+		alert( 'IndexValues: ' + indexValues[i] );
+	
+	for( var i= 0; i < checkedValues; i++ )
+		alert( 'CheckedValues: ' + checkedValues[i] );
+	for( var i = 0; i < indexValues.length - 1; i++ ){
+		if( checkedValues[i] % 2 == 1 )
+			obtainedFilter += indexValues[i] + '|';
+	}
+	alert( obtainedFilter );
 } 
 
 function inList( list, value ){
