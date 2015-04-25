@@ -1,0 +1,27 @@
+#SceneSceneFoto {
+	position : absolute;
+	left : 0px;
+	top : 0px;
+	width : 1280px;
+	height : 720px;
+	background-color: rgba(10, 10, 10, 1);
+	
+}
+
+.fotogal{
+	padding: 10px;
+	margin-right: 10px;
+}
+
+.fija{
+	
+	position : absolute;
+	top:0px;
+	
+}
+
+#gallerycont{
+	overflow: hidden;
+	width:1280px;
+	height:720px;
+}
