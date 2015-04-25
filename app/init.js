@@ -7,6 +7,7 @@ var firstUse = true;
 var movie_trailer_id = '';
 // var def = 1;
 var scene_name = '';
+var genre_id='';
 
 function onStart() {
 	// TODO : Add your Initialize code here
@@ -15,9 +16,9 @@ function onStart() {
 
 	// sf.scene.show( 'SceneVideo' );
 	// sf.scene.focus( 'SceneVideo' );
-
-	sf.scene.show('SceneMainSugestions');
-	sf.scene.focus('SceneMainSugestions');
+	
+	sf.scene.show('SceneUserTest');
+	sf.scene.focus('SceneUserTest');
 
 }
 function onDestroy() {
@@ -41,8 +42,7 @@ alert("init.js loaded.");
  * 
  */
 
-;
-(function($, window, document, undefined) {
+;(function($, window, document, undefined) {
 
 	$.fn.keynav = function(checkNav) {
 		var elements = this;
@@ -375,6 +375,53 @@ alert("init.js loaded.");
 			}
 		};
 
+		SceneSceneUserTest.prototype.handleKeyDown = function(keyCode){
+			alert("SceneSceneUserTest.handleKeyDown(" + keyCode + ")");
+			// TODO : write a key event handler when this scene gets focused
+			switch (keyCode) {
+			case sf.key.LEFT:
+				if ((x == 0 && y == 1) || (x == 1 && y == 0))
+					setCurrent(0, 0);
+				else
+					setCurrent(x, y - 1);
+				break;
+			case sf.key.RIGHT:
+				setCurrent(x, y + 1);
+				break;
+			case sf.key.UP:
+				if (x == 0) {
+					if (y == 0)
+						setCurrent(x, y + 1);
+					else
+						setCurrent(x + 1, y - 1);
+				} else
+					setCurrent(x - 1, y + 1);
+				break;
+			case sf.key.DOWN:
+				if (x == 0) {
+					if (y == 0)
+						setCurrent(x + 1, y);
+					else
+						setCurrent(x + 1, y - 1);
+				} else
+					setCurrent(x - 1, y + 1);
+
+				break;
+			case sf.key.ENTER:
+				genre_id += current.attr('id') + ', ';
+				alert( genre_id );
+				//sf.scene.hide('SceneMainSugestions');
+				//sf.scene.show('SceneShow');
+				//sf.scene.focus('SceneShow');
+				break;
+			default:
+				alert("handle default key event, key code(" + keyCode + ")");
+				break;
+			}
+			alert('key code: ' + keyCode);
+			alert('x value: ' + x);
+			alert('y value: ' + y);
+		}
 		return this;
 	};
 
