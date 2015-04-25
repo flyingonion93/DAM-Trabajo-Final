@@ -21,6 +21,7 @@ SceneSceneVideo.prototype.handleShow = function (data) {
 SceneSceneVideo.prototype.handleHide = function () {
 	alert("SceneSceneVideo.handleHide()");
 	// this function will be called when the scene manager hide this scene
+	$("#videocont").html('');
 };
 
 SceneSceneVideo.prototype.handleFocus = function () {
