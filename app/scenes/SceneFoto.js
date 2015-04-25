@@ -73,10 +73,10 @@ SceneSceneFoto.prototype.handleKeyDown = function(keyCode) {
 	case sf.key.RIGHT:
 		break;
 	case sf.key.UP:
-		scrollUp();
+		//scrollUp();
 		break;
 	case sf.key.DOWN:
-		scrollDown();
+		//scrollDown();
 		break;
 	case sf.key.ENTER:
 		break;
