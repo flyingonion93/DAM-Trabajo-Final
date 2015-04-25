@@ -30,10 +30,11 @@ SceneSceneNewReleases.prototype.initialize = function () {
 	  crossDomain: true,
 	  async: true,
 	  dataType: "json",
-	  url: API+"/discover/movie?api_key="+api_key,
+	  url: API+"/discover/movie?api_key="+api_key+"?sort_by=release_date.asc",//"?sort_by=release_date.asc",
+	//  url: API+"/discover/movie?sort_by=release_date.asc",
 	  success: function(data){
-		//sort( data )
-	  	alert('success');
+		//sort( data )"?sort_by=release_date.asc
+	  	alert('success');//?api_key="+api_key,
 	  	for (var i = 3; i > 0; i--) {
 	  		
 	  			$( "#moviesNR" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
