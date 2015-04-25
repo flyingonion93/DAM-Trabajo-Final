@@ -41,8 +41,7 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 
 SceneSceneMainSugestions.prototype.handleShow = function (data) {
 	alert("SceneSceneMainSugestions.handleShow()");
-	// this function will be called when the scene manager show this scene	
-
+	// this function will be called when the scene manager show this scene
 	scene_name = 'SceneMainSugestions';
 };
 
