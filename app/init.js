@@ -25,8 +25,10 @@ function onStart() {
 	
 	login(username, password);
 	
-	sf.scene.show('SceneUserTest');
-	sf.scene.focus('SceneUserTest');
+	//sf.scene.show('SceneUserTest');
+	//sf.scene.focus('SceneUserTest');
+	sf.scene.show('SceneMainSugestions');
+	sf.scene.focus('SceneMainSugestions');
 
 }
 function onDestroy() {
@@ -189,6 +191,12 @@ alert("init.js loaded.");
 				sf.scene.show('SceneNewReleases');
 				sf.scene.focus('SceneNewReleases');
 				break;
+			case sf.key.YELLOW:
+				event.preventDefault();
+				sf.scene.hide('SceneMainSugestions');
+				sf.scene.show('SceneCategories');
+				sf.scene.focus('SceneCategories');
+				break;
 			// PROVISIONAL
 			case sf.key.N0:
 				event.preventDefault();
@@ -237,6 +245,12 @@ alert("init.js loaded.");
 				sf.scene.hide('SceneSugestions');
 				sf.scene.show('SceneNewReleases');
 				sf.scene.focus('SceneNewReleases');
+				break;
+			case sf.key.YELLOW:
+				event.preventDefault();
+				sf.scene.hide('SceneSugestions');
+				sf.scene.show('SceneCategories');
+				sf.scene.focus('SceneCategories');
 				break;
 			case sf.key.RETURN:
 				event.preventDefault();
@@ -304,7 +318,13 @@ alert("init.js loaded.");
 				sf.scene.hide('SceneNewReleases');
 				sf.scene.show('SceneMainSugestions');
 				sf.scene.focus('SceneMainSugestions');
-
+				break;
+			case sf.key.YELLOW:
+				event.preventDefault();
+				sf.scene.hide('SceneNewReleases');
+				sf.scene.show('SceneCategories');
+				sf.scene.focus('SceneCategories');
+				break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;

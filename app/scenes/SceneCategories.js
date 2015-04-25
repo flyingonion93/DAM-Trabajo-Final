@@ -10,7 +10,6 @@ SceneSceneMainSugestionsCategories.prototype.initialize = function () {
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
 	
-	
 
 };
 
