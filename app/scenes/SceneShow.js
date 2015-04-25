@@ -182,6 +182,14 @@ SceneSceneShow.prototype.handleKeyDown = function(keyCode) {
 	}
 };
 
+function add_watchlist(){
+	alert('Watchlist');
+}
+
+function add_favorites(){
+	alert('Favorites');
+}
+
 // function puntuar (puntuacion) {
 // $.ajax({
 // type: "POST",

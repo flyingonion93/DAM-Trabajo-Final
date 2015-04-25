@@ -8,17 +8,18 @@ var movie_trailer_id = '';
 // var def = 1;
 var scene_name = '';
 var genre_id='';
+var option_selected;
 
 function onStart() {
 	// TODO : Add your Initialize code here
 	// NOTE : In order to start your app, call "sf.start()" at the end of this
 	// function!!
-
-	// sf.scene.show( 'SceneVideo' );
-	// sf.scene.focus( 'SceneVideo' );
 	
-	sf.scene.show('SceneUserTest');
-	sf.scene.focus('SceneUserTest');
+//	sf.scene.show('SceneUserTest');
+//	sf.scene.focus('SceneUserTest');
+	
+	sf.scene.show('SceneMainSugestions');
+	sf.scene.focus('SceneMainSugestions');
 
 }
 function onDestroy() {
@@ -339,10 +340,27 @@ alert("init.js loaded.");
 
 				break;
 			case sf.key.ENTER:
-				movie_id = current.attr('href');
-				sf.scene.hide('SceneNewReleases');
-				sf.scene.show('SceneShow');
-				sf.scene.focus('SceneShow');
+				option_selected = current.attr('id');
+				if(option_selected == 'trailer'){
+					sf.scene.hide('SceneShow');
+					sf.scene.show('SceneVideo');
+					sf.scene.focus('SceneVideo');
+				}
+				
+				if(option_selected == 'gallery'){
+					sf.scene.hide('SceneShow');
+					sf.scene.show('SceneFoto');
+					sf.scene.focus('SceneFoto');
+				}
+				
+				if(option_selected == 'watchlist'){
+					add_watchlist();
+				}
+				
+				if(option_selected == 'favorites'){
+					add_favorites();
+				}
+				
 				break;
 
 			case sf.key.RETURN:
