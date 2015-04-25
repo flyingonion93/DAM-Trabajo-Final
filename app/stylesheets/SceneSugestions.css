@@ -20,6 +20,11 @@
 	bottom: -35px;
 }
 
+#bottom .btn {
+	height: 85%;
+	margin-bottom: 15px;
+}
+
 #moviesSugestions img {
 	width: 100%;
 	/*margin-top: 10px;*/
