@@ -190,10 +190,59 @@ alert( "init.js loaded." );
 			alert( 'x value: ' + x );
 			alert( 'y value: ' + y );
 		};
+		
+		SceneSceneSugestions.prototype.handleKeyDown = function ( keyCode ) {
+			alert( "SceneSceneSugestions.handleKeyDown(" + keyCode + ")" );
+			def = 2;
+			// TODO : write a key event handler when this scene gets focused
+			switch ( keyCode ) {
+				case sf.key.LEFT:
+					setCurrent( x, y-1 );
+					break;
+				case sf.key.RIGHT:
+					setCurrent( x, y+1 );
+					break;
+				case sf.key.UP:
+					break;
+				case sf.key.DOWN:
+					break;
+				case sf.key.ENTER:
+					movie_id = current.attr( 'href' );
+					sf.scene.hide( 'SceneSugestions' );
+					sf.scene.show( 'SceneShow' );
+					sf.scene.focus( 'SceneShow' );
+					break;
+				case sf.key.RED:
+					event.preventDefault();
+					sf.scene.hide( 'SceneSugestions' );
+					sf.scene.show( 'SceneMainSugestions' );
+					sf.scene.focus( 'SceneMainSugestions' );
+					break;
+				case sf.key.BLUE:
+					event.preventDefault();
+					sf.scene.hide( 'SceneSugestions' );
+					sf.scene.show( 'SceneNewReleases' );
+					sf.scene.focus( 'SceneNewReleases' );
+					break;
+				case sf.key.RETURN:
+					event.preventDefault();
+					movie_id = '';
+					sf.scene.hide( 'SceneSugestions' );
+					sf.scene.show( 'SceneMainSugestions' );
+					sf.scene.focus( 'SceneMainSugestions' );
+					break;
+				default:
+					alert( "handle default key event, key code(" + keyCode + ")" );
+					break;
+			}
+			alert( 'key code: ' + keyCode );
+			alert( 'x value: ' + x );
+			alert( 'y value: ' + y );
+		};
 
 		SceneSceneNewReleases.prototype.handleKeyDown = function ( keyCode ) {
 			alert( "SceneSceneNewReleases.handleKeyDown(" + keyCode + ")" );
-			def = 2;
+			def = 3;
 			// TODO : write a key event handler when this scene gets focused
 			switch ( keyCode ) {
 				case sf.key.LEFT:
@@ -268,6 +317,11 @@ alert( "init.js loaded." );
 						sf.scene.focus( 'SceneMainSugestions' );
 					}
 					else if(def == 2){
+						sf.scene.hide( 'SceneShow' );
+						sf.scene.show( 'SceneSugestions' );
+						sf.scene.focus( 'SceneSugestions' );
+						}
+					else if(def == 3){
 						sf.scene.hide( 'SceneShow' );
 						sf.scene.show( 'SceneNewReleases' );
 						sf.scene.focus( 'SceneNewReleases' );

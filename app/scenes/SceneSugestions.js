@@ -23,8 +23,8 @@ SceneSceneSugestions.prototype.initialize = function () {
 	  success: function(data){
 		//sort( data )
 	  	alert('success');
-	  	for (var i = 10; i >= 8; i--) {
-	  		$( "#moviesSugestions" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );  		
+	  	for (var i = 13; i >= 8; i--) {
+	  		$( "#moviesSugestions" ).append( '<div class=" item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );  		
 	  	}
 	  	
 	  	$( '#moviesSugestions div.item' ).keynav();
