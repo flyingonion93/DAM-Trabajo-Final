@@ -3,7 +3,7 @@ var api_key = 'fffcfc6228ea5f968c308ea249b5a9eb';
 var session_id = '';
 var base_url = 'http://image.tmdb.org/t/p/';
 var movie_id = '';
-var firstUse = true;
+var first_use = false;
 var movie_trailer_id = '';
 // var def = 1;
 var scene_name = '';
@@ -21,12 +21,13 @@ function onStart() {
 	// function!!
 	
 	login(username, password);
-	
-//	sf.scene.show('SceneUserTest');
-//	sf.scene.focus('SceneUserTest');
-	sf.scene.show('SceneMainSugestions');
-	sf.scene.focus('SceneMainSugestions');
-
+	if( first_use){
+		sf.scene.show( 'SceneUserTest' );
+		sf.scene.focus( 'SceneUserTest' );
+	}else{
+		sf.scene.show( 'SceneMainSugestions' );
+		sf.scene.focus( 'SceneMainSugestions' );
+	}
 }
 function onDestroy() {
 	// stop your XHR or Ajax operation and put codes to destroy your application
