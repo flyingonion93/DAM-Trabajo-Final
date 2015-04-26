@@ -178,27 +178,23 @@ alert("init.js loaded.");
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
 				changeScene('SceneShow');
-				break;
+			break;
 			case sf.key.GREEN:
 				event.preventDefault();
 				changeScene('SceneNewReleases');
-				break;
+			break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				changeScene('SceneCategories');
-				break;
-			case sf.key.BLUE:
-				event.preventDefault();
 				changeScene('SceneProfile');
-				break;
+			break;
 			// PROVISIONAL
 			case sf.key.N0:
 				event.preventDefault();
 				changeScene('SceneSugestions');
-				break;
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
-				break;
+			break;
 			}
 			alert('key code: ' + keyCode);
 			alert('x value: ' + x);
@@ -213,39 +209,35 @@ alert("init.js loaded.");
 			switch (keyCode) {
 			case sf.key.LEFT:
 				setCurrent(x, y - 1);
-				break;
+			break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-				break;
+			break;
 			case sf.key.UP:
-				break;
+			break;
 			case sf.key.DOWN:
-				break;
+			break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
 				changeScene('SceneShow');
-				break;
+			break;
 			case sf.key.RED:
 				event.preventDefault();
 				changeScene('SceneMainSugestions');
-				break;
+			break;
 			case sf.key.GREEN:
 				event.preventDefault();
 				changeScene('SceneNewReleases');
-				break;
+			break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				changeScene('SceneCategories');
-				break;
-			case sf.key.BLUE:
-				event.preventDefault();
 				changeScene('SceneProfile');
-				break;
+			break;
 			case sf.key.RETURN:
 				event.preventDefault();
 				movie_id = '';
 				changeScene('SceneMainSugestions');
-				break;
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
@@ -278,7 +270,7 @@ alert("init.js loaded.");
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
 				changeScene('SceneShow');
-				break;
+			break;
 			// case sf.key.RETURN:
 			// event.preventDefault();
 			// movie_id = '';
@@ -287,18 +279,14 @@ alert("init.js loaded.");
 			case sf.key.RED:
 				event.preventDefault();
 				changeScene('SceneMainSugestions');
-				break;
+			break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				changeScene('SceneCategories');
-				break;
-			case sf.key.BLUE:
-				event.preventDefault();
 				changeScene('SceneProfile');
-				break;
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
-				break;
+			break;
 			}
 			alert('key code: ' + keyCode);
 			alert('x value: ' + x);
@@ -445,28 +433,28 @@ alert("init.js loaded.");
 			switch (keyCode) {
 			case sf.key.LEFT:
 				setCurrent(x, y - 1);
-				break;
+			break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-				break;
+			break;
 			case sf.key.UP:
 					setCurrent(x - 1, y);
-				break;
+			break;
 			case sf.key.DOWN:
 				setCurrent(x + 1, y);
 				break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
 				changeScene('SceneShow');
-				break;
+			break;
 			case sf.key.RED:
 				event.preventDefault();
 				changeScene('SceneMainSugestions');
-				break;
-			case sf.key.YELLOW:
+			break;
+			case sf.key.GREEN:
 				event.preventDefault();
-				changeScene('SceneCategories');
-				break;
+				changeScene('SceneNewReleases');
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
