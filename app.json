@@ -5,10 +5,10 @@
   "SceneMainSugestions",
   "SceneNewReleases",
   "SceneProfile",
-  "SceneCategories",
   "SceneVideo",
   "SceneUserTest",
-  "SceneFoto"
+  "SceneFoto",
+  "SceneCategories"
  ],
  "files": [],
  "theme": "base",

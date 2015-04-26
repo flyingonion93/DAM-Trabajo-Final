@@ -1,28 +1,23 @@
-alert('SceneSceneMainSugestionsCategories.js loaded');
+alert('SceneSceneCategories.js loaded');
 
-function SceneSceneMainSugestionsCategories() {
+function SceneSceneCategories() {
 
 };
 
-SceneSceneMainSugestionsCategories.prototype.initialize = function () {
-	alert("SceneSceneMainSugestionsCategories.initialize()");
+SceneSceneCategories.prototype.initialize = function () {
+	alert("SceneSceneCategories.initialize()");
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
-	
 
 };
 
-SceneSceneMainSugestionsCategories.prototype.handleShow = function (data) {
-	alert("SceneSceneMainSugestionsCategories.handleShow()");
+SceneSceneCategories.prototype.handleShow = function (data) {
+	alert("SceneSceneCategories.handleShow()");
 	// this function will be called when the scene manager show this scene
 	
 	scene_name = 'SceneCategories';
 	
-	alert(api_key);
-	session_id = localStorage.getItem('session_id');
-	alert(session_id);
-		
 	alert(API+"/discover/movie?api_key="+api_key);
 	$.ajax({
 	  type: "GET",
@@ -46,26 +41,26 @@ SceneSceneMainSugestionsCategories.prototype.handleShow = function (data) {
 	});
 };
 
-SceneSceneMainSugestionsCategories.prototype.handleHide = function () {
-	alert("SceneSceneMainSugestionsCategories.handleHide()");
-	// this function will be called when the scene manager hide this scene
-	$("#topCategories").html('');
+SceneSceneCategories.prototype.handleHide = function () {
+	alert("SceneSceneCategories.handleHide()");
+	// this function will be called when the scene manager hide this scene	
+	
 	$("#moviesCategories").html('');
-	$("#bottomCategories").html('');
+	
 };
 
-SceneSceneMainSugestionsCategories.prototype.handleFocus = function () {
-	alert("SceneSceneMainSugestionsCategories.handleFocus()");
+SceneSceneCategories.prototype.handleFocus = function () {
+	alert("SceneSceneCategories.handleFocus()");
 	// this function will be called when the scene manager focus this scene
 };
 
-SceneSceneMainSugestionsCategories.prototype.handleBlur = function () {
-	alert("SceneSceneMainSugestionsCategories.handleBlur()");
+SceneSceneCategories.prototype.handleBlur = function () {
+	alert("SceneSceneCategories.handleBlur()");
 	// this function will be called when the scene manager move focus to another scene from this scene
 };
 
-SceneSceneMainSugestionsCategories.prototype.handleKeyDown = function (keyCode) {
-	alert("SceneSceneMainSugestionsCategories.handleKeyDown(" + keyCode + ")");
+SceneSceneCategories.prototype.handleKeyDown = function (keyCode) {
+	alert("SceneSceneCategories.handleKeyDown(" + keyCode + ")");
 	// TODO : write an key event handler when this scene get focued
 	switch (keyCode) {
 		case sf.key.LEFT:
