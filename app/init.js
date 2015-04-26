@@ -206,48 +206,38 @@ alert("init.js loaded.");
 			switch (keyCode) {
 			case sf.key.LEFT:
 				setCurrent(x, y - 1);
-				break;
+			break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-				break;
+			break;
 			case sf.key.UP:
-				break;
+			break;
 			case sf.key.DOWN:
-				break;
+			break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
-				sf.scene.hide('SceneSugestions');
-				sf.scene.show('SceneShow');
-				sf.scene.focus('SceneShow');
-				break;
+				changeScene( 'SceneShow' );
+			break;
 			case sf.key.RED:
 				event.preventDefault();
-				sf.scene.hide('SceneSugestions');
-				sf.scene.show('SceneMainSugestions');
-				sf.scene.focus('SceneMainSugestions');
-				break;
+				changeScene( 'SceneMainSugestions' );
+			break;
 			case sf.key.GREEN:
 				event.preventDefault();
-				sf.scene.hide('SceneSugestions');
-				sf.scene.show('SceneNewReleases');
-				sf.scene.focus('SceneNewReleases');
-				break;
+				changeScene( 'SceneNewReleases' );
+			break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				sf.scene.hide('SceneSugestions');
-				sf.scene.show('SceneCategories');
-				sf.scene.focus('SceneCategories');
-				break;
+				changeScene( 'SceneCategories' );
+			break;
 			case sf.key.RETURN:
 				event.preventDefault();
 				movie_id = '';
-				sf.scene.hide('SceneSugestions');
-				sf.scene.show('SceneMainSugestions');
-				sf.scene.focus('SceneMainSugestions');
-				break;
+				changeScene( 'SceneMainSugestions') ;
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
-				break;
+			break;
 			}
 			alert('key code: ' + keyCode);
 			alert('x value: ' + x);
@@ -267,27 +257,23 @@ alert("init.js loaded.");
 				else{
 					setCurrent(x, y - 1);
 				scrollLeft();}
-				break;
+			break;
 			case sf.key.RIGHT:
 				scrollRight();
 				setCurrent(x, y + 1);
-				break;
+			break;
 			case sf.key.UP:
 				if (x == 0) {
 					if (y == 0){
 						setCurrent(x, y + 1);
-						
 					}
 					else{
 						setCurrent(x + 1, y - 1);
-						
 					}
 				} else{
-					setCurrent(x - 1, y + 1);
-					
-				}
-				
-				break;
+					setCurrent(x - 1, y + 1);	
+				}	
+			break;
 			case sf.key.DOWN:
 				if (x == 0) {
 					if (y == 0)
@@ -296,35 +282,27 @@ alert("init.js loaded.");
 						setCurrent(x + 1, y - 1);
 				} else
 					setCurrent(x - 1, y + 1);
-
-				break;
+			break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
-				sf.scene.hide('SceneNewReleases');
-				sf.scene.show('SceneShow');
-				sf.scene.focus('SceneShow');
-				break;
-			/*
-			 * case sf.key.RETURN: event.preventDefault(); movie_id = '';
-			 * sf.scene.hide( 'SceneNewReleases' ); sf.scene.show(
-			 * 'SceneMainSugestions' ); sf.scene.focus( 'SceneMainSugestions' );
-			 * break;
-			 */
+				changeScene( 'SceneShow' );
+			break;
+//			case sf.key.RETURN:
+//				event.preventDefault();
+//				movie_id = '';
+//				changeScene( 'SceneMainSugestions' );
+//			break;
 			case sf.key.RED:
 				event.preventDefault();
-				sf.scene.hide('SceneNewReleases');
-				sf.scene.show('SceneMainSugestions');
-				sf.scene.focus('SceneMainSugestions');
-				break;
+				changeScene( 'SceneMainSugestions' );
+			break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				sf.scene.hide('SceneNewReleases');
-				sf.scene.show('SceneCategories');
-				sf.scene.focus('SceneCategories');
-				break;
+				changeScene( 'SceneCategories' );
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
-				break;
+			break;
 			}
 			alert('key code: ' + keyCode);
 			alert('x value: ' + x);
@@ -341,10 +319,10 @@ alert("init.js loaded.");
 					setCurrent(0, 0);
 				else
 					setCurrent(x, y - 1);
-				break;
+			break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-				break;
+			break;
 			case sf.key.UP:
 				if (x == 0) {
 					if (y == 0)
@@ -353,7 +331,7 @@ alert("init.js loaded.");
 						setCurrent(x + 1, y - 1);
 				} else
 					setCurrent(x - 1, y + 1);
-				break;
+			break;
 			case sf.key.DOWN:
 				if (x == 0) {
 					if (y == 0)
@@ -363,65 +341,48 @@ alert("init.js loaded.");
 				} else
 					setCurrent(x - 1, y + 1);
 
-				break;
+			break;
 			case sf.key.ENTER:
 				option_selected = current.attr('id');
 				if(option_selected == 'trailer'){
-					sf.scene.hide('SceneShow');
-					sf.scene.show('SceneVideo');
-					sf.scene.focus('SceneVideo');
-				}
-				
+					changeScene( 'SceneVideo' );
+				}				
 				if(option_selected == 'gallery'){
-					sf.scene.hide('SceneShow');
-					sf.scene.show('SceneFoto');
-					sf.scene.focus('SceneFoto');
-				}
-				
+					changeScene( 'SceneFoto' );
+				}				
 				if(option_selected == 'watchlist'){
 					add_watchlist();
-				}
-				
+				}				
 				if(option_selected == 'favorites'){
 					add_favorites();
-				}
-				
+				}				
 				if(option_selected == 'readmore'){
-					
-					if(readmoreCond) {
+					if(readmoreCond)
 						openSlide();
-					}
-					else{
+					else
 						closeSlide();
-					}
-				}
-				
-				break;
-
+				}				
+			break;
 			case sf.key.RETURN:
 				event.preventDefault();
 				movie_id = '';
-
-				sf.scene.hide('SceneShow');
-				sf.scene.show(scene_name);
-				sf.scene.focus(scene_name);
-
-				break;
+				changeScene( 'SceneMainSugestions' );
+			break;
 			case sf.key.N1:
 				puntuar(1 * 2);
-				break;
+			break;
 			case sf.key.N2:
 				puntuar(2 * 2);
-				break;
+			break;
 			case sf.key.N3:
 				puntuar(3 * 2);
-				break;
+			break;
 			case sf.key.N4:
 				puntuar(4 * 2);
-				break;
+			break;
 			case sf.key.N5:
 				puntuar(5 * 2);
-				break;
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
@@ -438,13 +399,13 @@ alert("init.js loaded.");
 					setCurrent( x+5, y );
 				else
 					setCurrent(x-5,y);
-				break;
+			break;
 			case sf.key.RIGHT:
 				if( ( x >= 5 && x <= 9 ) ||( x >= 15 && x <= 19 ) )
 					setCurrent( x-5, y );
 				else
 					setCurrent(x+5,y);
-				break;
+			break;
 			case sf.key.UP:
 				if( x == 10 || x == 15 )
 					setCurrent( x-6, y );
@@ -454,9 +415,7 @@ alert("init.js loaded.");
 					setCurrent( 14, y );
 				else
 					setCurrent(x-1,y);
-				break;				
-				setCurrent(x-1,y);
-				break;
+			break;
 			case sf.key.DOWN:
 				if( x == 4 || x == 9 )
 					setCurrent( x+6, y );
@@ -464,7 +423,7 @@ alert("init.js loaded.");
 					setCurrent( 20, y );
 				else
 					setCurrent(x+1,y);
-				break;
+			break;
 			case sf.key.ENTER:
 				var newAppend = current.attr( 'id') + ',';
 				if( newAppend == 'okButton,'){
@@ -476,7 +435,7 @@ alert("init.js loaded.");
 				else
 					genre_id += newAppend;
 				alert(genre_id);
-				break;
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
@@ -487,8 +446,6 @@ alert("init.js loaded.");
 		}
 		return this;
 	};
-	
-
 })(jQuery, window, document);
 
 function generateFilter(){
