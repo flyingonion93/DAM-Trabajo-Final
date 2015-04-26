@@ -176,8 +176,12 @@ alert("init.js loaded.");
 					setCurrent(x - 1, y + 1);
 				break;
 			case sf.key.ENTER:
-				movie_id = current.attr('href');
-				changeScene('SceneShow');
+				if( x == 1 && y == 3 )
+					changeScene( 'SceneSugestions' );
+				else{
+					movie_id = current.attr('href');
+					changeScene('SceneShow');
+				}
 			break;
 			case sf.key.GREEN:
 				event.preventDefault();
@@ -214,8 +218,10 @@ alert("init.js loaded.");
 				setCurrent(x, y + 1);
 			break;
 			case sf.key.UP:
+				setCurrent(x - 1, y );
 			break;
 			case sf.key.DOWN:
+				setCurrent(x + 1, y );
 			break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');

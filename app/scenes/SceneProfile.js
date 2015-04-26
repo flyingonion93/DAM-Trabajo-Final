@@ -1,7 +1,7 @@
 alert('SceneSceneProfile.js loaded');
 var loaded;
 var type;
-var currentDiv
+var currentDiv;
 function SceneSceneProfile() {
 
 };

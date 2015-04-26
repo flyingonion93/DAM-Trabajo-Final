@@ -31,11 +31,15 @@ SceneSceneSugestions.prototype.handleShow = function (data) {
 	  success: function(data){
 		//sort( data )
 	  	alert('success');
-	  	for (var i = 13; i >= 8; i--) {
-	  		$( "#moviesSugestions" ).append( '<div class=" item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );  		
-	  		//$("#row").append('<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+	  	for (var i = 15; i > 0; i--) {
+	  		if(i == 15 )
+				$( "#moviesSugestions" ).append( '<div class="row"' + i + '>' );
+			if( i % 3 == 0 )
+				$( "#moviesSugestions" ).append( '</div><div class="row"' + i + '>' );
+			if( i == 0 )
+				$( "#moviesSugestions" ).append( '</div>' );		  		
+	  		$( "#moviesSugestions" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 	  	}
-	  	
 	  	$( '#moviesSugestions div.item' ).keynav();
 	  },
 	  error: function(){
