@@ -9,7 +9,7 @@
 	background-image : url('');
 }
 
-/*#top {
+/*#topSugestions {
 	background-color: red;	
 	margin-bottom: 35px;
 }*/
@@ -17,17 +17,23 @@
 #bottomSugestions {
 	width: 100%;
 	position: absolute;
-	bottom: -35px;
+	bottom: -20px;
 }
 
-#bottomSugestions .btn {
+/*#bottomSugestions .btn {
 	height: 85%;
 	margin-bottom: 15px;
-}
+}*/
 
 #moviesSugestions img {
-	width: 100%;
-	/*margin-top: 10px;*/
+	width: 96%;
+	margin-top: 6px;
+}
+
+#moviesSugestions {
+	overflow: hidden;
+	width:1280px;
+	height:720px;
 }
 
 #moviesSugestions .selected img {
