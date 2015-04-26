@@ -41,7 +41,7 @@ SceneSceneProfile.prototype.handleShow = function (data) {
 						$( "#profileWatchlist" ).append( '</div><div class="row">' );
 					if( i == 0 )
 						$( "#profileWatchlist" ).append( '</div>' );
-					$( "#profileWatchlist" ).append( '<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+					$( "#profileWatchlist" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 				}
 				$( '#profileWatchlist div.item' ).keynav();
 			},
