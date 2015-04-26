@@ -469,6 +469,14 @@ alert("init.js loaded.");
 				movie_id = current.attr('href');
 				changeScene( 'SceneShow' );
 			break;
+			case sf.key.RED:
+				event.preventDefault();
+				changeScene( 'SceneMainSugestions' );
+			break;
+			case sf.key.YELLOW:
+				event.preventDefault();
+				changeScene( 'SceneCategories' );
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;

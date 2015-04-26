@@ -5,8 +5,13 @@
 	width : 1280px;
 	height : 720px;
 	font-family: 'Open Sans', sans-serif;
-	background-color : #rgba( 10, 10, 10, 1);
+	background-color : black;
 	background-image : url('');
+}
+
+#profileWatchlist{
+	margin-right: -20px;
+	margin-top: 20px;
 }
 
 #profileWatchlist .selected img {
@@ -20,7 +25,6 @@
 	margin-top: 10px;
 	margin-left: 350px;
 }
-
 
 #profileBottom {
 	width: 100%;
