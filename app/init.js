@@ -15,6 +15,7 @@ var username = 'ambrosio_rapidofurioso';
 var password = 'johanderohan';
 var current_scene = '';
 var gotFilter;
+var scrolledNR = 0;
 
 function onStart() {
 	// TODO : Add your Initialize code here
@@ -270,23 +271,10 @@ alert("init.js loaded.");
 				setCurrent(x, y + 1);
 				break;
 			case sf.key.UP:
-				if (x == 0) {
-					if (y == 0)
-						setCurrent(x, y + 1);
-					else
-						setCurrent(x + 1, y - 1);
-				} else
-					setCurrent(x - 1, y + 1);
+				scrollUpNR()
 				break;
 			case sf.key.DOWN:
-				if (x == 0) {
-					if (y == 0)
-						setCurrent(x + 1, y);
-					else
-						setCurrent(x + 1, y - 1);
-				} else
-					setCurrent(x - 1, y + 1);
-
+				scrollDownNR()
 				break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
@@ -578,4 +566,30 @@ function login(username, password) {
 
 		}
 	});
+}
+
+function scrollDownNR() {	
+	
+	alert('DOWN');
+
+	scrolledNR = scrolledNR + 300;
+
+	$("#moviesNR").animate({
+		scrollTopNR : scrolledNR
+	});
+
+}
+
+function scrollUpNR() {
+	
+	alert('UP');
+	
+	if (scrolledNR > 0){
+		scrolledNR=scrolledNR-300;
+	}
+	
+	$("#moviesNR").animate({
+	        scrollTop:  scrolledNR
+	   });
+
 }

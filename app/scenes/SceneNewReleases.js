@@ -47,6 +47,7 @@ SceneSceneNewReleases.prototype.handleHide = function () {
 	alert("SceneSceneNewReleases.handleHide()");
 	// this function will be called when the scene manager hide this scene
 	$( "#moviesNR").html('');
+	scrolledNR=0;
 	
 };
 
@@ -69,8 +70,10 @@ SceneSceneNewReleases.prototype.handleKeyDown = function (keyCode) {
 		case sf.key.RIGHT:
 			break;
 		case sf.key.UP:
+			scrollUpNR();
 			break;
 		case sf.key.DOWN:
+			scrollDownNR();
 			break;
 		case sf.key.ENTER:
 			break;
