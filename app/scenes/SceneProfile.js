@@ -10,7 +10,32 @@ SceneSceneProfile.prototype.initialize = function () {
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
 	
-	
+	//Watchlist movies.
+	$.ajax({
+		  type: "GET",
+		  crossDomain: true,
+		  async: true,
+		  dataType: "json",
+		  url: API + '/account/'+ username + '/watchlist/movies',
+		  data: {
+			api_key : api_key,
+			session_id : session_id
+		  },
+		  success: function(data){
+		  	alert('success');
+		  	for (var i = 8; i >= 0; i--) {
+		  		if(i == 8 ){
+		  			$( "#movies" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+		  		} else { 		
+			  		$( "#movies" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+		  		}	  		
+		  	}
+		  	$( '#movies div.item' ).keynav();
+		  },
+		  error: function(){
+		  	alert( 'error' );
+		  }
+		});	
 
 };
 
