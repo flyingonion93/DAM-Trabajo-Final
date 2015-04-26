@@ -16,7 +16,7 @@ SceneSceneNewReleases.prototype.handleShow = function (data) {
 	scene_name = 'SceneNewReleases';
 	
 	var today = new Date();
-	var pelis = '';
+	//var pelis = '';
 	alert("SceneSceneNewReleases.handleShow()");
 	// this function will be called when the scene manager show this scene
 	
