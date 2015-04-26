@@ -179,6 +179,7 @@ alert("init.js loaded.");
 			case sf.key.GREEN:
 				event.preventDefault();
 				changeScene( 'SceneNewReleases' );
+			break;
 			case sf.key.YELLOW:
 				event.preventDefault();
 				changeScene( 'SceneCategories' );

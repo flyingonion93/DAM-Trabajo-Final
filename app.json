@@ -3,12 +3,13 @@
   "SceneShow",
   "SceneSugestions",
   "SceneMainSugestions",
-  "SceneNewReleases",
   "SceneProfile",
   "SceneVideo",
   "SceneUserTest",
   "SceneFoto",
-  "SceneCategories"
+  "SceneCategories",
+  "SceneNewReleasesWrong",
+  "SceneNewReleases"
  ],
  "files": [],
  "theme": "base",
