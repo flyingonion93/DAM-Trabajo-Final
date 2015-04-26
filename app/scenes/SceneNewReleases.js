@@ -13,6 +13,8 @@ SceneSceneNewReleases.prototype.initialize = function () {
 };
 
 SceneSceneNewReleases.prototype.handleShow = function (data) {
+	scene_name = 'SceneNewReleases';
+	
 	var today = new Date();
 	var pelis = '';
 	alert("SceneSceneNewReleases.handleShow()");

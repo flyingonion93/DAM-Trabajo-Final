@@ -22,6 +22,7 @@ function onStart() {
 	// function!!
 	
 	login(username, password);
+	
 	if( first_use){
 		sf.scene.show( 'SceneUserTest' );
 		sf.scene.focus( 'SceneUserTest' );
@@ -367,7 +368,7 @@ alert("init.js loaded.");
 			case sf.key.RETURN:
 				event.preventDefault();
 				movie_id = '';
-				changeScene( 'SceneMainSugestions' );
+				changeScene( scene_name );
 			break;
 			case sf.key.N1:
 				puntuar(1 * 2);
