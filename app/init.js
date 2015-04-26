@@ -451,7 +451,7 @@ alert("init.js loaded.");
 				setCurrent(x, y + 1);
 				break;
 			case sf.key.UP:
-				setCurrent(x - 1, y);
+					setCurrent(x - 1, y);
 				break;
 			case sf.key.DOWN:
 				setCurrent(x + 1, y);
