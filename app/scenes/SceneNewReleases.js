@@ -32,7 +32,12 @@ SceneSceneNewReleases.prototype.handleShow = function (data) {
 			//sort( data )"?sort_by=release_date.asc
 		  	alert('success');//?api_key="+api_key,
 		  	for (var i = 15; i > 0; i--) {//en mes de 15 es ralla(pelis de 2020 amb 43200min)
-		  		
+		  		if(i == 15 )
+					$( "#moviesNR" ).append( '<div class="row">' );
+				if( i % 3 == 0 )
+					$( "#moviesNR" ).append( '</div><div class="row">' );
+				if( i == 0 )
+					$( "#moviesNR" ).append( '</div>' );		  		
 		  		$( "#moviesNR" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 		  	}
 		  	$( '#moviesNR div.item' ).keynav();

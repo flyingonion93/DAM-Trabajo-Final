@@ -262,20 +262,19 @@ alert("init.js loaded.");
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
 			case sf.key.LEFT:
-				if ((x == 0 && y == 1) || (x == 1 && y == 0))
-					setCurrent(0, 0);
-				else
-					setCurrent(x, y - 1);
-				break;
+				setCurrent(x, y - 1);
+			break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-				break;
+			break;
 			case sf.key.UP:
-				scrollUpNR()
-				break;
+				scrollUpNR();
+				setCurrent( x - 1, y );
+			break;
 			case sf.key.DOWN:
-				scrollDownNR()
-				break;
+				scrollDownNR();
+				setCurrent( x + 1, y );
+			break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
 				changeScene('SceneShow');
@@ -569,27 +568,20 @@ function login(username, password) {
 }
 
 function scrollDownNR() {	
-	
 	alert('DOWN');
-
 	scrolledNR = scrolledNR + 300;
-
 	$("#moviesNR").animate({
 		scrollTopNR : scrolledNR
 	});
 
 }
 
-function scrollUpNR() {
-	
-	alert('UP');
-	
+function scrollUpNR() {	
+	alert('UP');	
 	if (scrolledNR > 0){
 		scrolledNR=scrolledNR-300;
-	}
-	
+	}	
 	$("#moviesNR").animate({
 	        scrollTop:  scrolledNR
 	   });
-
 }
