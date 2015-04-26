@@ -185,14 +185,14 @@ alert("init.js loaded.");
 				event.preventDefault();
 				changeScene( 'SceneCategories' );
 			break;
+			case sf.key.BLUE:
+				event.preventDefault();
+				changeScene( 'SceneProfile' );
+			break;
 			// PROVISIONAL
 			case sf.key.N0:
 				event.preventDefault();
 				changeScene( 'SceneSugestions' );
-			break;
-			case sf.key.N1:
-				event.preventDefault();
-				changeScene( 'SceneProfile' );
 			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
@@ -234,6 +234,10 @@ alert("init.js loaded.");
 			case sf.key.YELLOW:
 				event.preventDefault();
 				changeScene( 'SceneCategories' );
+			break;
+			case sf.key.BLUE:
+				event.preventDefault();
+				changeScene( 'SceneProfile' );
 			break;
 			case sf.key.RETURN:
 				event.preventDefault();
@@ -304,6 +308,10 @@ alert("init.js loaded.");
 			case sf.key.YELLOW:
 				event.preventDefault();
 				changeScene( 'SceneCategories' );
+			break;
+			case sf.key.BLUE:
+				event.preventDefault();
+				changeScene( 'SceneProfile' );
 			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");

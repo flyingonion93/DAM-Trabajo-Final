@@ -1,4 +1,7 @@
 alert('SceneSceneProfile.js loaded');
+var loaded;
+var type;
+var currentDiv;
 
 function SceneSceneProfile() {
 
@@ -9,6 +12,9 @@ SceneSceneProfile.prototype.initialize = function () {
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
+	loaded = false;
+	type = 'watchlist';
+	currentDiv = 'profileWatchlist';
 };
 
 SceneSceneProfile.prototype.handleShow = function (data) {
@@ -16,69 +22,38 @@ SceneSceneProfile.prototype.handleShow = function (data) {
 	// this function will be called when the scene manager show this scene
 	scene_name = 'SceneProfile';
 	
-	//THIS IS FOR TESTING PURPOSES.
-//	$.ajax({
-//		  type: "GET",
-//		  crossDomain: true,
-//		  async: true,
-//		  dataType: "json",
-//		  url: API+"/discover/movie?api_key="+api_key,
-//		  success: function(data){
-//			  for (var i = 7; i >= 0; i--) {
-//			  		if(i == 7 )
-//			  			$( "#profileWatchlist" ).append( '<div class="row">' );
-//			  		if( i == 3 )
-//			  			$( "#profileWatchlist" ).append( '</div><div class="row">' );
-//			  		if( i == 0 )
-//			  			$( "#profileWatchlist" ).append( '</div>' );
-//		  			$( "#profileWatchlist" ).append( '<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
-//			  	}
-//			  	$( '#profileWatchlist div.item' ).keynav();
-//		  },
-//		  error: function(){
-//		  	alert( 'error' );
-//		  }
-//		});	
-	
-	alert(username);
-	
-	//https://www.themoviedb.org/account/ambrosio_rapidofurioso/discover/rated/movie
-	//var API = 'http://api.themoviedb.org/3';
-	
-	alert(API + '/account/'+ username + '/watchlist/movies');
-	
-	//Watchlist movies.
-	$.ajax({
-		  type: "GET",
-		  crossDomain: true,
-		  async: true,
-		  dataType: "json",
-		  url: API + '/account/'+ username + '/watchlist/movies',
-		  data: {
-			api_key : api_key,
-			session_id : session_id
-		  },
-		  success: function(data){
-//		  	alert('success');
-//		  	alert( 'content: ' +data );
-//		  	for (var i = 7; i >= 0; i--) {
-//		  		if(i == 7 )
-//		  			$( "#profileWatchlist" ).append( '<div class="row">' );
-//		  		if( i == 4 )
-//		  			$( "#profileWatchlist" ).append( '</div><div class="row">' );
-//		  		if( i == 0 )
-//		  			$( "#profileWatchlist" ).append( '</div>' );
-//	  			$( "#profileWatchlist" ).append( '<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
-//		  	}
-//		  	$( '#profileWatchlist div.item' ).keynav();
-			  
-			  alert(data.results[0].title);
-			  
-		  },
-		  error: function(){
-		  	alert( 'error' );
-		  }
-	});
+	if( !loaded )
+	{
+		//Watchlist movies.
+		$.ajax({
+			type: "GET",
+			crossDomain: true,
+			async: true,
+			dataType: "json",
+			url: API + '/account/'+ username + '/'+ type +'/movies',
+			data: {
+				api_key : api_key,
+				session_id : session_id
+			},
+			success: function(data){
+				for (var i = data.results.length - 1; i >= 0; i--) {
+					if(i == 7 )
+						$( "#" + currentDiv ).append( '<div class="row">' );
+					if( i == 4 )
+						$( "#" + currentDiv ).append( '</div><div class="row">' );
+					if( i == 0 )
+						$( "#" + currentDiv ).append( '</div>' );
+					$( "#" + currentDiv ).append( '<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+				}
+				$( '#' + currentDiv + 'div.item' ).keynav();
+			},
+			error: function(){
+				alert( 'error' );
+			}
+		});	
+		loaded = true;
+	}
+	$( '#' + currentDiv + 'div.item' ).keynav();
 };
 
 SceneSceneProfile.prototype.handleHide = function () {
