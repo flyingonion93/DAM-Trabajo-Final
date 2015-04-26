@@ -13,7 +13,7 @@ var option_selected;
 var readmoreCond = true;
 var username = 'ambrosio_rapidofurioso';
 var password = 'johanderohan';
-
+var current_scene = '';
 
 function onStart() {
 	// TODO : Add your Initialize code here
@@ -140,6 +140,7 @@ alert("init.js loaded.");
 
 		SceneSceneMainSugestions.prototype.handleKeyDown = function(keyCode) {
 			alert("SceneSceneMainSugestions.handleKeyDown(" + keyCode + ")");
+			current_scene = 'SceneMainSugestions';
 			// def = 1;
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
@@ -148,10 +149,10 @@ alert("init.js loaded.");
 					setCurrent(0, 0);
 				else
 					setCurrent(x, y - 1);
-				break;
+			break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-				break;
+			break;
 			case sf.key.UP:
 				if (x == 0) {
 					if (y == 0)
@@ -160,7 +161,7 @@ alert("init.js loaded.");
 						setCurrent(x + 1, y - 1);
 				} else
 					setCurrent(x - 1, y + 1);
-				break;
+			break;
 			case sf.key.DOWN:
 				if (x == 0) {
 					if (y == 0)
@@ -169,39 +170,23 @@ alert("init.js loaded.");
 						setCurrent(x + 1, y - 1);
 				} else
 					setCurrent(x - 1, y + 1);
-
-				break;
+			break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
-				sf.scene.hide('SceneMainSugestions');
-				sf.scene.show('SceneShow');
-				sf.scene.focus('SceneShow');
-				break;
-			case sf.key.TOOLS:
-				event.preventDefault();
-				sf.scene.hide('SceneMainSugestions');
-				sf.scene.show('SceneLogin');
-				sf.scene.focus('SceneLogin');
-				break;
+				changeScene( 'SceneShow' );
+			break;
 			case sf.key.GREEN:
 				event.preventDefault();
-				sf.scene.hide('SceneMainSugestions');
-				sf.scene.show('SceneNewReleases');
-				sf.scene.focus('SceneNewReleases');
-				break;
+				changeScene( 'SceneNewReleases' );
 			case sf.key.YELLOW:
 				event.preventDefault();
-				sf.scene.hide('SceneMainSugestions');
-				sf.scene.show('SceneCategories');
-				sf.scene.focus('SceneCategories');
-				break;
+				changeScene( 'SceneCategories' );
+			break;
 			// PROVISIONAL
 			case sf.key.N0:
 				event.preventDefault();
-				sf.scene.hide('SceneMainSugestions');
-				sf.scene.show('SceneSugestions');
-				sf.scene.focus('SceneSugestions');
-				break;
+				changeScene( 'SceneSugestions' );
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
@@ -210,6 +195,7 @@ alert("init.js loaded.");
 			alert('x value: ' + x);
 			alert('y value: ' + y);
 		};
+		
 
 		SceneSceneSugestions.prototype.handleKeyDown = function(keyCode) {
 			alert("SceneSceneSugestions.handleKeyDown(" + keyCode + ")");
@@ -440,6 +426,7 @@ alert("init.js loaded.");
 
 		SceneSceneUserTest.prototype.handleKeyDown = function(keyCode){
 			alert("SceneSceneUserTest.handleKeyDown(" + keyCode + ")");
+			current_scene = 'SceneUserTest';
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
 			case sf.key.LEFT:
@@ -476,8 +463,10 @@ alert("init.js loaded.");
 				break;
 			case sf.key.ENTER:
 				var newAppend = current.attr( 'id') + ',';
-				if( newAppend == 'okButton,')
+				if( newAppend == 'okButton,'){
 					generateFilter();
+					changeScene( 'SceneMainSugestions' );
+				}
 				else
 					genre_id += newAppend;
 				alert(genre_id);
@@ -533,6 +522,13 @@ function inList( list, value ){
 			return true;
 	}
 	return false;
+}
+
+function changeScene( sceneName ){
+	sf.scene.hide( current_scene );
+	current_scene = sceneName;
+	sf.scene.show( current_scene );
+	sf.scene.focus( current_scene );
 }
 
 function login(username, password){
