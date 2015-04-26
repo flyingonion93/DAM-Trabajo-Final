@@ -34,9 +34,27 @@
 }
 
 */
-#moviesNR img {
+/*#moviesNR img {
 	width: 100%;
 	margin-top: 10px;
+}
+*/
+.moviegal{
+	padding: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.fixa{
+	
+	position : absolute;
+	/*top: -35px;*/
+	
+}
+
+#moviesNR{
+	overflow: hidden;
+	width:1280px;
+	height:720px;
 }
 
 #moviesNR .selected img {

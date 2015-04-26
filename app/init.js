@@ -271,22 +271,32 @@ alert("init.js loaded.");
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
 			case sf.key.LEFT:
-				if ((x == 0 && y == 1) || (x == 1 && y == 0))
+				if ((x == 0 && y == 1) || (x == 1 && y == 0)){
 					setCurrent(0, 0);
-				else
+				scrollLeft();}
+				else{
 					setCurrent(x, y - 1);
+				scrollLeft();}
 				break;
 			case sf.key.RIGHT:
+				scrollRight();
 				setCurrent(x, y + 1);
 				break;
 			case sf.key.UP:
 				if (x == 0) {
-					if (y == 0)
+					if (y == 0){
 						setCurrent(x, y + 1);
-					else
+						
+					}
+					else{
 						setCurrent(x + 1, y - 1);
-				} else
+						
+					}
+				} else{
 					setCurrent(x - 1, y + 1);
+					
+				}
+				
 				break;
 			case sf.key.DOWN:
 				if (x == 0) {

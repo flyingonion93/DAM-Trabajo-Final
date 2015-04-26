@@ -72,29 +72,52 @@ SceneSceneNewReleases.prototype.handleBlur = function () {
 	alert("SceneSceneNewReleases.handleBlur()");
 	// this function will be called when the scene manager move focus to another scene from this scene
 };
-/*
+SceneSceneFoto.prototype.handleKeyDown = function(keyCode) {
+	alert("SceneSceneFoto.handleKeyDown(" + keyCode + ")");
+	// TODO : write an key event handler when this scene get focued
+	switch (keyCode) {
+	case sf.key.LEFT:
+		scrollLeft();
+		break;
+	case sf.key.RIGHT:
+		scrollRight();
+		break;
+	case sf.key.UP:
+		
+		break;
+	case sf.key.DOWN:
+		
+		break;
+	case sf.key.ENTER:
+		break;
+	default:
+		alert("handle default key event, key code(" + keyCode + ")");
+		break;
+	}
+};
+
 var scrolled = 0;
 
-function scrollDown() {
+function scrollRight() {
 	
-	alert("Bajo!");
+	alert("Cap a la dreta!");
 
 	scrolled = scrolled + 300;
 
 	$("#moviesNR").animate({
-		scrollTop : scrolled
+		scrollLeft : scrolled
 	});
 
 }
 
-function scrollUp() {
+function scrollLeft() {
 	
 	scrolled=scrolled-300;
-	
+	alert("Cap a la esquerra!");
 	$("#moviesNR").animate({
-	        scrollTop:  scrolled
+	        scrollLeft:  scrolled
 	   });
 }
 
-*/
+
 
