@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:tv.samsung.sdk="http://www.samsung.com/tvsdk">
+  <tv.samsung.sdk:VisualScene xmi:id="_fWrVUOxbEeS6Io7lWGEadQ" sId="5ieqa0mkcrlb8" sName="SceneProfileFavorite" sType="2" sBgImage="" sBgClr="#ffffff" sWidth="960" sHeight="540"/>
+  <notation:Diagram xmi:id="_fXM5wOxbEeS6Io7lWGEadQ" type="VisualScene" element="_fWrVUOxbEeS6Io7lWGEadQ" name="SceneProfileFavorite.scene" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_fXM5wexbEeS6Io7lWGEadQ"/>
+  </notation:Diagram>
+</xmi:XMI>

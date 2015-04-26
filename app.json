@@ -8,7 +8,8 @@
   "SceneUserTest",
   "SceneFoto",
   "SceneCategories",
-  "SceneNewReleases"
+  "SceneNewReleases",
+  "SceneProfileFavorite"
  ],
  "files": [],
  "theme": "base",

@@ -1,25 +1,25 @@
-alert('SceneSceneProfile.js loaded');
+alert('SceneSceneProfileFavorite.js loaded');
 var loaded;
 var type;
-var currentDiv
-function SceneSceneProfile() {
+var currentDiv;
+function SceneSceneProfileFavorite() {
 
 };
 
-SceneSceneProfile.prototype.initialize = function () {
-	alert("SceneSceneProfile.initialize()");
+SceneSceneProfileFavorite.prototype.initialize = function () {
+	alert("SceneSceneProfileFavorite.initialize()");
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
 	loaded = false;
-	type = 'watchlist';
-	currentDiv = 'profileWatchlist';
+	type = 'favorite';
+	currentDiv = 'profileFavorites';
 };
 
-SceneSceneProfile.prototype.handleShow = function (data) {
-	alert("SceneSceneProfile.handleShow()");
+SceneSceneProfileFavorite.prototype.handleShow = function (data) {
+	alert("SceneSceneProfileFavorite.handleShow()");
 	// this function will be called when the scene manager show this scene
-	scene_name = 'SceneProfile';
+	scene_name = 'SceneProfileFavorite';
 	
 	if( !loaded ){
 		$.ajax({
@@ -35,14 +35,14 @@ SceneSceneProfile.prototype.handleShow = function (data) {
 			success: function(data){
 				for (var i = data.results.length - 1; i >= 0; i--) {
 					if(i == 7 )
-						$( "#profileWatchlist" ).append( '<div class="row">' );
+						$( "#profileFavorites" ).append( '<div class="row">' );
 					if( i == 4 )
-						$( "#profileWatchlist" ).append( '</div><div class="row">' );
+						$( "#profileFavorites" ).append( '</div><div class="row">' );
 					if( i == 0 )
-						$( "#profileWatchlist" ).append( '</div>' );
-					$( "#profileWatchlist" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+						$( "#profileFavorites" ).append( '</div>' );
+					$( "#profileFavorites" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 				}
-				$( '#profileWatchlist div.item' ).keynav();
+				$( '#profileFavorites div.item' ).keynav();
 			},
 			error: function(){
 				alert( 'error' );
@@ -50,26 +50,26 @@ SceneSceneProfile.prototype.handleShow = function (data) {
 		});	
 		loaded = true;
 	}
-	$( '#profileWatchlist div.item' ).keynav();
+	$( '#profileFavorites div.item' ).keynav();
 };
 
-SceneSceneProfile.prototype.handleHide = function () {
-	alert("SceneSceneProfile.handleHide()");
+SceneSceneProfileFavorite.prototype.handleHide = function () {
+	alert("SceneSceneProfileFavorite.handleHide()");
 	// this function will be called when the scene manager hide this scene
 };
 
-SceneSceneProfile.prototype.handleFocus = function () {
-	alert("SceneSceneProfile.handleFocus()");
+SceneSceneProfileFavorite.prototype.handleFocus = function () {
+	alert("SceneSceneProfileFavorite.handleFocus()");
 	// this function will be called when the scene manager focus this scene
 };
 
-SceneSceneProfile.prototype.handleBlur = function () {
-	alert("SceneSceneProfile.handleBlur()");
+SceneSceneProfileFavorite.prototype.handleBlur = function () {
+	alert("SceneSceneProfileFavorite.handleBlur()");
 	// this function will be called when the scene manager move focus to another scene from this scene
 };
 
-SceneSceneProfile.prototype.handleKeyDown = function (keyCode) {
-	alert("SceneSceneProfile.handleKeyDown(" + keyCode + ")");
+SceneSceneProfileFavorite.prototype.handleKeyDown = function (keyCode) {
+	alert("SceneSceneProfileFavorite.handleKeyDown(" + keyCode + ")");
 	// TODO : write an key event handler when this scene get focued
 	switch (keyCode) {
 		case sf.key.LEFT:

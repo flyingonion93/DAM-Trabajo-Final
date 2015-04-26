@@ -455,6 +455,47 @@ alert("init.js loaded.");
 				event.preventDefault();
 				changeScene('SceneNewReleases');
 			break;
+			case sf.key.BLUE:
+				event.preventDefault();
+				changeScene('SceneProfileFavorite');
+			break;
+			default:
+				alert("handle default key event, key code(" + keyCode + ")");
+				break;
+			}
+		}
+		
+		SceneSceneProfileFavorite.prototype.handleKeyDown = function(keyCode) {
+			current_scene = 'SceneProfileFavorite';
+			switch (keyCode) {
+			case sf.key.LEFT:
+				setCurrent(x, y - 1);
+			break;
+			case sf.key.RIGHT:
+				setCurrent(x, y + 1);
+			break;
+			case sf.key.UP:
+					setCurrent(x - 1, y);
+			break;
+			case sf.key.DOWN:
+				setCurrent(x + 1, y);
+				break;
+			case sf.key.ENTER:
+				movie_id = current.attr('href');
+				changeScene('SceneShow');
+			break;
+			case sf.key.RED:
+				event.preventDefault();
+				changeScene('SceneMainSugestions');
+			break;
+			case sf.key.GREEN:
+				event.preventDefault();
+				changeScene('SceneNewReleases');
+			break;
+			case sf.key.BLUE:
+				event.preventDefault();
+				changeScene('SceneProfile');
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
