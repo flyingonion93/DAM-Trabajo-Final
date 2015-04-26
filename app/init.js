@@ -14,6 +14,7 @@ var readmoreCond = true;
 var username = 'ambrosio_rapidofurioso';
 var password = 'johanderohan';
 var current_scene = '';
+var gotFilter;
 
 function onStart() {
 	// TODO : Add your Initialize code here
@@ -199,6 +200,7 @@ alert("init.js loaded.");
 
 		SceneSceneSugestions.prototype.handleKeyDown = function(keyCode) {
 			alert("SceneSceneSugestions.handleKeyDown(" + keyCode + ")");
+			current_scene = 'SceneSugestions';
 			// def = 2;
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
@@ -254,6 +256,7 @@ alert("init.js loaded.");
 
 		SceneSceneNewReleases.prototype.handleKeyDown = function(keyCode) {
 			alert("SceneSceneNewReleases.handleKeyDown(" + keyCode + ")");
+			current_scene = 'SceneNewReleases';
 			// def = 3;
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
@@ -330,6 +333,7 @@ alert("init.js loaded.");
 
 		SceneSceneShow.prototype.handleKeyDown = function(keyCode) {
 			alert("SceneSceneShow.handleKeyDown(" + keyCode + ")");
+			current_scene = 'SceneShow';
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
 			case sf.key.LEFT:
@@ -464,8 +468,10 @@ alert("init.js loaded.");
 			case sf.key.ENTER:
 				var newAppend = current.attr( 'id') + ',';
 				if( newAppend == 'okButton,'){
-					generateFilter();
-					changeScene( 'SceneMainSugestions' );
+					genreFilter = generateFilter();
+					if( gotFilter )
+						alert( 'genreFilter = ' + genreFilter );
+						changeScene( 'SceneMainSugestions' );
 				}
 				else
 					genre_id += newAppend;
@@ -486,34 +492,24 @@ alert("init.js loaded.");
 })(jQuery, window, document);
 
 function generateFilter(){
+	alert( 'entering generateFilter' );
 	var obtainedFilter = '';
 	var helpList = genre_id.split(",");
 	var indexValues = {};
 	var checkedValues = {};
 	var k = 0;
 	var count;
-	for( var i = 0; i < helpList.length - 1; i++ ){
-		count = 0;
-		if( inList( indexValues, helpList[i] ) ) //We avoid repeated values
-			continue;
-		indexValues[k] = helpList[i];
-		for( var j = 0; j < helpList.length - 1; j++ ){
-			if( indexValues[k] == helpList[j] )
-				count++;
-		}
-		checkedValues[k] = count;
-		k++;
+	gotFilter = false;
+	for ( var i = 0; i < helpList.length - 1; i++ ) {
+		if( i != helpList-length - 2 )
+			obtainedFilter += helpList[i] + '|';
 	}
-	for( var i= 0; i < indexValues; i++ )
-		alert( 'IndexValues: ' + indexValues[i] );
-	
-	for( var i= 0; i < checkedValues; i++ )
-		alert( 'CheckedValues: ' + checkedValues[i] );
-	for( var i = 0; i < indexValues.length - 1; i++ ){
-		if( checkedValues[i] % 2 == 1 )
-			obtainedFilter += indexValues[i] + '|';
-	}
-	alert( obtainedFilter );
+	alert( 'filter is: ' + obtainedFilter );
+	alert( 'leaving generateFilter')
+	gotFilter = true;
+	obtainedFilter = obtainedFilter.substring( 0, obtainedFilter.length - 1 );
+	return obtainedFilter;
+
 } 
 
 function inList( list, value ){
