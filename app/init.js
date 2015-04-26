@@ -132,10 +132,10 @@ alert( "init.js loaded." );
 						setCurrent( 0, 0 );
 					else
 						setCurrent( x, y-1 );
-					break;
+				break;
 				case sf.key.RIGHT:
 					setCurrent( x, y+1 );
-					break;
+				break;
 				case sf.key.UP:
 					if( x == 0 ) {
 						if( y == 0 )
