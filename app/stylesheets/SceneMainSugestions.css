@@ -6,7 +6,7 @@
 	height : 720px;
 	font-family: 'Open Sans', sans-serif;
 	background-color: rgba(10,10,10,1);
-	background-image : url('');
+	background-image : url("/background/1821417.jpg")
 
 }
 
@@ -17,7 +17,7 @@
 #bottom {
 	width: 100%;
 	position: absolute;
-	bottom: -20px;
+	bottom: -35px;
 }
 
 /*html, body {
