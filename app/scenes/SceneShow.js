@@ -187,7 +187,7 @@ function add_watchlist(){
 		crossDomain : true,
 		async : true,
 		dataType : "json",
-		url : API + '/account/' + movie_id + '/watchlist',
+		url : API + '/account/' + username + '/watchlist',
 		data : {
 			api_key : api_key,
 			session_id : session_id,			
@@ -210,7 +210,7 @@ function add_favorites(){
 		crossDomain : true,
 		async : true,
 		dataType : "json",
-		url : API + '/account/' + movie_id + '/favorite',
+		url : API + '/account/' + username + '/favorite',
 		data : {
 			api_key : api_key,
 			session_id : session_id,			
