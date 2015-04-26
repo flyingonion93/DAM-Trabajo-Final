@@ -572,14 +572,14 @@ function scrollDownNR() {
 	scrolledNR = scrolledNR + 300;
 	$("#moviesNR").animate({
 		scrollTopNR : scrolledNR
-	});
+	}, 100);
 
 }
 
 function scrollUpNR() {	
 	alert('UP');	
 	if (scrolledNR > 0){
-		scrolledNR=scrolledNR-300;
+		scrolledNR = scrolledNR - 300;
 	}	
 	$("#moviesNR").animate({
 	        scrollTop:  scrolledNR
