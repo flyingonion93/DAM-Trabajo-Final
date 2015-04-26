@@ -35,7 +35,7 @@ SceneSceneNewReleases.prototype.handleShow = function (data) {
 		  		
 		  		$( "#moviesNR" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 		  	}
-		  	$( '#moviesNR div.item' ).keynav();
+		  	$( '#body div.item' ).keynav();
 		  },
 		  error: function(){
 		  	alert( 'error' );

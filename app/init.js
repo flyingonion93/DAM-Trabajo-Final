@@ -7,8 +7,8 @@ var first_use = true;
 var movie_trailer_id = '';
 // var def = 1;
 var scene_name = '';
-var genre_id='';
-var genre_filter='';
+var genre_id = '';
+var genre_filter = '';
 var option_selected;
 var readmoreCond = true;
 var username = 'ambrosio_rapidofurioso';
@@ -20,15 +20,15 @@ function onStart() {
 	// TODO : Add your Initialize code here
 	// NOTE : In order to start your app, call "sf.start()" at the end of this
 	// function!!
-	
+
 	login(username, password);
-	
-	if( first_use){
-		sf.scene.show( 'SceneUserTest' );
-		sf.scene.focus( 'SceneUserTest' );
-	}else{
-		sf.scene.show( 'SceneMainSugestions' );
-		sf.scene.focus( 'SceneMainSugestions' );
+
+	if (first_use) {
+		sf.scene.show('SceneUserTest');
+		sf.scene.focus('SceneUserTest');
+	} else {
+		sf.scene.show('SceneMainSugestions');
+		sf.scene.focus('SceneMainSugestions');
 	}
 }
 function onDestroy() {
@@ -52,7 +52,8 @@ alert("init.js loaded.");
  * 
  */
 
-;(function($, window, document, undefined) {
+;
+(function($, window, document, undefined) {
 
 	$.fn.keynav = function(checkNav) {
 		var elements = this;
@@ -151,10 +152,10 @@ alert("init.js loaded.");
 					setCurrent(0, 0);
 				else
 					setCurrent(x, y - 1);
-			break;
+				break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-			break;
+				break;
 			case sf.key.UP:
 				if (x == 0) {
 					if (y == 0)
@@ -163,7 +164,7 @@ alert("init.js loaded.");
 						setCurrent(x + 1, y - 1);
 				} else
 					setCurrent(x - 1, y + 1);
-			break;
+				break;
 			case sf.key.DOWN:
 				if (x == 0) {
 					if (y == 0)
@@ -172,28 +173,28 @@ alert("init.js loaded.");
 						setCurrent(x + 1, y - 1);
 				} else
 					setCurrent(x - 1, y + 1);
-			break;
+				break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
-				changeScene( 'SceneShow' );
-			break;
+				changeScene('SceneShow');
+				break;
 			case sf.key.GREEN:
 				event.preventDefault();
-				changeScene( 'SceneNewReleases' );
-			break;
+				changeScene('SceneNewReleases');
+				break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				changeScene( 'SceneCategories' );
-			break;
+				changeScene('SceneCategories');
+				break;
 			case sf.key.BLUE:
 				event.preventDefault();
-				changeScene( 'SceneProfile' );
-			break;
+				changeScene('SceneProfile');
+				break;
 			// PROVISIONAL
 			case sf.key.N0:
 				event.preventDefault();
-				changeScene( 'SceneSugestions' );
-			break;
+				changeScene('SceneSugestions');
+				break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
@@ -211,42 +212,42 @@ alert("init.js loaded.");
 			switch (keyCode) {
 			case sf.key.LEFT:
 				setCurrent(x, y - 1);
-			break;
+				break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-			break;
+				break;
 			case sf.key.UP:
-			break;
+				break;
 			case sf.key.DOWN:
-			break;
+				break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
-				changeScene( 'SceneShow' );
-			break;
+				changeScene('SceneShow');
+				break;
 			case sf.key.RED:
 				event.preventDefault();
-				changeScene( 'SceneMainSugestions' );
-			break;
+				changeScene('SceneMainSugestions');
+				break;
 			case sf.key.GREEN:
 				event.preventDefault();
-				changeScene( 'SceneNewReleases' );
-			break;
+				changeScene('SceneNewReleases');
+				break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				changeScene( 'SceneCategories' );
-			break;
+				changeScene('SceneCategories');
+				break;
 			case sf.key.BLUE:
 				event.preventDefault();
-				changeScene( 'SceneProfile' );
-			break;
+				changeScene('SceneProfile');
+				break;
 			case sf.key.RETURN:
 				event.preventDefault();
 				movie_id = '';
-				changeScene( 'SceneMainSugestions') ;
-			break;
+				changeScene('SceneMainSugestions');
+				break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
-			break;
+				break;
 			}
 			alert('key code: ' + keyCode);
 			alert('x value: ' + x);
@@ -260,29 +261,23 @@ alert("init.js loaded.");
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
 			case sf.key.LEFT:
-				if ((x == 0 && y == 1) || (x == 1 && y == 0)){
+				if ((x == 0 && y == 1) || (x == 1 && y == 0))
 					setCurrent(0, 0);
-				scrollLeft();}
-				else{
+				else
 					setCurrent(x, y - 1);
-				scrollLeft();}
-			break;
+				break;
 			case sf.key.RIGHT:
-				scrollRight();
 				setCurrent(x, y + 1);
-			break;
+				break;
 			case sf.key.UP:
 				if (x == 0) {
-					if (y == 0){
+					if (y == 0)
 						setCurrent(x, y + 1);
-					}
-					else{
+					else
 						setCurrent(x + 1, y - 1);
-					}
-				} else{
-					setCurrent(x - 1, y + 1);	
-				}	
-			break;
+				} else
+					setCurrent(x - 1, y + 1);
+				break;
 			case sf.key.DOWN:
 				if (x == 0) {
 					if (y == 0)
@@ -291,31 +286,32 @@ alert("init.js loaded.");
 						setCurrent(x + 1, y - 1);
 				} else
 					setCurrent(x - 1, y + 1);
-			break;
+
+				break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
-				changeScene( 'SceneShow' );
-			break;
-//			case sf.key.RETURN:
-//				event.preventDefault();
-//				movie_id = '';
-//				changeScene( 'SceneMainSugestions' );
-//			break;
+				changeScene('SceneShow');
+				break;
+			// case sf.key.RETURN:
+			// event.preventDefault();
+			// movie_id = '';
+			// changeScene( 'SceneMainSugestions' );
+			// break;
 			case sf.key.RED:
 				event.preventDefault();
-				changeScene( 'SceneMainSugestions' );
-			break;
+				changeScene('SceneMainSugestions');
+				break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				changeScene( 'SceneCategories' );
-			break;
+				changeScene('SceneCategories');
+				break;
 			case sf.key.BLUE:
 				event.preventDefault();
-				changeScene( 'SceneProfile' );
-			break;
+				changeScene('SceneProfile');
+				break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
-			break;
+				break;
 			}
 			alert('key code: ' + keyCode);
 			alert('x value: ' + x);
@@ -332,10 +328,10 @@ alert("init.js loaded.");
 					setCurrent(0, 0);
 				else
 					setCurrent(x, y - 1);
-			break;
+				break;
 			case sf.key.RIGHT:
 				setCurrent(x, y + 1);
-			break;
+				break;
 			case sf.key.UP:
 				if (x == 0) {
 					if (y == 0)
@@ -344,7 +340,7 @@ alert("init.js loaded.");
 						setCurrent(x + 1, y - 1);
 				} else
 					setCurrent(x - 1, y + 1);
-			break;
+				break;
 			case sf.key.DOWN:
 				if (x == 0) {
 					if (y == 0)
@@ -354,101 +350,100 @@ alert("init.js loaded.");
 				} else
 					setCurrent(x - 1, y + 1);
 
-			break;
+				break;
 			case sf.key.ENTER:
 				option_selected = current.attr('id');
-				if(option_selected == 'trailer'){
-					changeScene( 'SceneVideo' );
-				}				
-				if(option_selected == 'gallery'){
-					changeScene( 'SceneFoto' );
-				}				
-				if(option_selected == 'watchlist'){
+				if (option_selected == 'trailer') {
+					changeScene('SceneVideo');
+				}
+				if (option_selected == 'gallery') {
+					changeScene('SceneFoto');
+				}
+				if (option_selected == 'watchlist') {
 					add_watchlist();
-				}				
-				if(option_selected == 'favorites'){
+				}
+				if (option_selected == 'favorites') {
 					add_favorites();
-				}				
-				if(option_selected == 'readmore'){
-					if(readmoreCond)
+				}
+				if (option_selected == 'readmore') {
+					if (readmoreCond)
 						openSlide();
 					else
 						closeSlide();
-				}				
-			break;
+				}
+				break;
 			case sf.key.RETURN:
 				event.preventDefault();
 				movie_id = '';
-				changeScene( scene_name );
-			break;
+				changeScene(scene_name);
+				break;
 			case sf.key.N1:
 				puntuar(1 * 2);
-			break;
+				break;
 			case sf.key.N2:
 				puntuar(2 * 2);
-			break;
+				break;
 			case sf.key.N3:
 				puntuar(3 * 2);
-			break;
+				break;
 			case sf.key.N4:
 				puntuar(4 * 2);
-			break;
+				break;
 			case sf.key.N5:
 				puntuar(5 * 2);
-			break;
+				break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
 			}
 		};
 
-		SceneSceneUserTest.prototype.handleKeyDown = function(keyCode){
+		SceneSceneUserTest.prototype.handleKeyDown = function(keyCode) {
 			alert("SceneSceneUserTest.handleKeyDown(" + keyCode + ")");
 			current_scene = 'SceneUserTest';
 			// TODO : write a key event handler when this scene gets focused
 			switch (keyCode) {
 			case sf.key.LEFT:
-				if( ( x >= 0 && x <= 4 ) ||( x >= 10 && x <= 14 ) )
-					setCurrent( x+5, y );
+				if ((x >= 0 && x <= 4) || (x >= 10 && x <= 14))
+					setCurrent(x + 5, y);
 				else
-					setCurrent(x-5,y);
-			break;
+					setCurrent(x - 5, y);
+				break;
 			case sf.key.RIGHT:
-				if( ( x >= 5 && x <= 9 ) ||( x >= 15 && x <= 19 ) )
-					setCurrent( x-5, y );
+				if ((x >= 5 && x <= 9) || (x >= 15 && x <= 19))
+					setCurrent(x - 5, y);
 				else
-					setCurrent(x+5,y);
-			break;
+					setCurrent(x + 5, y);
+				break;
 			case sf.key.UP:
-				if( x == 10 || x == 15 )
-					setCurrent( x-6, y );
-				else if( x == 5 )
-					setCurrent( 19, y );
-				else if( x == 0 || x == 20 )
-					setCurrent( 14, y );
+				if (x == 10 || x == 15)
+					setCurrent(x - 6, y);
+				else if (x == 5)
+					setCurrent(19, y);
+				else if (x == 0 || x == 20)
+					setCurrent(14, y);
 				else
-					setCurrent(x-1,y);
-			break;
+					setCurrent(x - 1, y);
+				break;
 			case sf.key.DOWN:
-				if( x == 4 || x == 9 )
-					setCurrent( x+6, y );
-				else if( x == 14 || x == 19 )
-					setCurrent( 20, y );
+				if (x == 4 || x == 9)
+					setCurrent(x + 6, y);
+				else if (x == 14 || x == 19)
+					setCurrent(20, y);
 				else
-					setCurrent(x+1,y);
-			break;
+					setCurrent(x + 1, y);
+				break;
 			case sf.key.ENTER:
-				var newAppend = current.attr( 'id') + ',';
-				if( newAppend == 'okButton,'){
+				var newAppend = current.attr('id') + ',';
+				if (newAppend == 'okButton,') {
 					genreFilter = generateFilter();
-					if( gotFilter )
-						alert( 'genreFilter = ' + genreFilter );
-						changeScene( 'SceneMainSugestions' );
-				}
-				else
+					if (gotFilter)
+						alert('genreFilter = ' + genreFilter);
+					changeScene('SceneMainSugestions');
+				} else
 					genre_id += newAppend;
 				alert(genre_id);
-			break;
+				break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
@@ -462,29 +457,29 @@ alert("init.js loaded.");
 			current_scene = 'SceneProfile';
 			switch (keyCode) {
 			case sf.key.LEFT:
-				setCurrent( x, y-1 );
-			break;
+				setCurrent(x, y - 1);
+				break;
 			case sf.key.RIGHT:
-				setCurrent( x, y+1 );
-			break;
+				setCurrent(x, y + 1);
+				break;
 			case sf.key.UP:
-				setCurrent( x-1, y );
-			break;
+				setCurrent(x - 1, y);
+				break;
 			case sf.key.DOWN:
-				setCurrent(x+1,y);
-			break;
+				setCurrent(x + 1, y);
+				break;
 			case sf.key.ENTER:
 				movie_id = current.attr('href');
-				changeScene( 'SceneShow' );
-			break;
+				changeScene('SceneShow');
+				break;
 			case sf.key.RED:
 				event.preventDefault();
-				changeScene( 'SceneMainSugestions' );
-			break;
+				changeScene('SceneMainSugestions');
+				break;
 			case sf.key.YELLOW:
 				event.preventDefault();
-				changeScene( 'SceneCategories' );
-			break;
+				changeScene('SceneCategories');
+				break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
@@ -494,8 +489,8 @@ alert("init.js loaded.");
 	};
 })(jQuery, window, document);
 
-function generateFilter(){
-	alert( 'entering generateFilter' );
+function generateFilter() {
+	alert('entering generateFilter');
 	var obtainedFilter = '';
 	var helpList = genre_id.split(",");
 	var indexValues = {};
@@ -503,74 +498,84 @@ function generateFilter(){
 	var k = 0;
 	var count;
 	gotFilter = false;
-	for ( var i = 0; i < helpList.length - 1; i++ ) {
-		if( i != helpList-length - 2 )
+	for ( var i = 0; i < helpList.length - 1; i++) {
+		if (i != helpList - length - 2)
 			obtainedFilter += helpList[i] + '|';
 	}
-	alert( 'filter is: ' + obtainedFilter );
-	alert( 'leaving generateFilter')
+	alert('filter is: ' + obtainedFilter);
+	alert('leaving generateFilter')
 	gotFilter = true;
-	obtainedFilter = obtainedFilter.substring( 0, obtainedFilter.length - 1 );
+	obtainedFilter = obtainedFilter.substring(0, obtainedFilter.length - 1);
 	return obtainedFilter;
 
-} 
+}
 
-function inList( list, value ){
-	for( var i = 0; i < list.length - 1; i++ ){
-		if( list[i] == value )
+function inList(list, value) {
+	for ( var i = 0; i < list.length - 1; i++) {
+		if (list[i] == value)
 			return true;
 	}
 	return false;
 }
 
-function changeScene( sceneName ){
-	sf.scene.hide( current_scene );
+function changeScene(sceneName) {
+	sf.scene.hide(current_scene);
 	current_scene = sceneName;
-	sf.scene.show( current_scene );
-	sf.scene.focus( current_scene );
+	sf.scene.show(current_scene);
+	sf.scene.focus(current_scene);
 }
 
-function login(username, password){
+function login(username, password) {
 	$.ajax({
-		  type: "GET",
-		  crossDomain: true,
-		  async: true,
-		  dataType: "json",
-		  url: API+"/authentication/token/new",
-		  data: { api_key: api_key },
-		  success: function(data){
-		  	var request_token = data.request_token;
+		type : "GET",
+		crossDomain : true,
+		async : true,
+		dataType : "json",
+		url : API + "/authentication/token/new",
+		data : {
+			api_key : api_key
+		},
+		success : function(data) {
+			var request_token = data.request_token;
 
-		  	$.ajax({
-			  type: "GET",
-			  crossDomain: true,
-			  async: true,
-			  dataType: "json",
-			  url: API+"/authentication/token/validate_with_login",
-			  data: { api_key: api_key, request_token: request_token, username: username, password: password },
-			  success: function(data){
+			$.ajax({
+				type : "GET",
+				crossDomain : true,
+				async : true,
+				dataType : "json",
+				url : API + "/authentication/token/validate_with_login",
+				data : {
+					api_key : api_key,
+					request_token : request_token,
+					username : username,
+					password : password
+				},
+				success : function(data) {
 
-			  		$.ajax({
-					  type: "GET",
-					  crossDomain: true,
-					  async: true,
-					  dataType: "json",
-					  url: API+"/authentication/session/new",
-					  data: { api_key: api_key, request_token: request_token },
-					  success: function(data){
+					$.ajax({
+						type : "GET",
+						crossDomain : true,
+						async : true,
+						dataType : "json",
+						url : API + "/authentication/session/new",
+						data : {
+							api_key : api_key,
+							request_token : request_token
+						},
+						success : function(data) {
 
-					  	session_id = data.session_id;
-		    			//Utilizamos la caché del navegador
-		    			localStorage.setItem('session_id', session_id);
-		    			
-		    			alert(session_id);
-					  	
-					  }
+							session_id = data.session_id;
+							// Utilizamos la caché del navegador
+							localStorage.setItem('session_id', session_id);
+
+							alert(session_id);
+
+						}
 					});
-			  	
-			  }
+
+				}
 			});
 
-		  }
-		});
+		}
+	});
 }
