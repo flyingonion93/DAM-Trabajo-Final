@@ -31,9 +31,9 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 		success : function(data) {
 			var fecha = data.release_date;
 			
-			alert(data.title + '  (' + fecha.substring(0, 4) + ')');
+			//alert(data.title + '  (' + fecha.substring(0, 4) + ')');
 			$("#imagen").append('<img src="' + base_url + 'w342' + data.poster_path+ '"/>');
-			$("#title_show").html(data.title + '  (' + fecha.substring(0, 4) + ')');
+			$("#title_show").html('<b>' + data.title + '  (' + fecha.substring(0, 4) + ')</b>');
 			$("#duration").html('<b>Duration:</b> ' + data.runtime + ' min');
 			$("#genres").html('<b>Genres:</b> ');
 			alert(data.genres.length);
