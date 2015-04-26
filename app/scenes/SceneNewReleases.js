@@ -101,7 +101,7 @@ function scrollRight() {
 	scrolled = scrolled + 300;
 
 	$("#moviesNR").animate({
-		scrollLeft : scrolled
+		scrollRight : scrolled
 	});
 
 }
