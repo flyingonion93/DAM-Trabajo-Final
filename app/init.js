@@ -266,25 +266,25 @@ alert( "init.js loaded." );
 						sf.scene.show( 'SceneMainSugestions' );
 						sf.scene.focus( 'SceneMainSugestions' );
 						}
-					break;
+				break;
 				case sf.key.N1:
 					puntuar( 1 * 2 );
-					break;
+				break;
 				case sf.key.N2:
 					puntuar( 2 * 2 );
-					break;
+				break;
 				case sf.key.N3:
 					puntuar( 3 * 2 );
-					break;
+				break;
 				case sf.key.N4:
 					puntuar( 4 * 2 );
-					break;
+				break;
 				case sf.key.N5:
 					puntuar( 5 * 2 );
-					break;
+				break;
 				default:
 					alert( "handle default key event, key code(" + keyCode + ")" );
-					break;
+				break;
 			}
 		};
 
