@@ -20,7 +20,6 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 	  dataType: "json",
 	  url: API+"/discover/movie?api_key="+api_key+"&with_genres=" + genreFilter,
 	  success: function(data){
-		//sort( data )
 	  	alert('success');
 	  	for (var i = 8; i >= 0; i--) {
 	  		if(i == 8 ){
@@ -34,7 +33,7 @@ SceneSceneMainSugestions.prototype.initialize = function () {
 	  error: function(){
 	  	alert( 'error' );
 	  }
-	});
+	});	
 };
 
 SceneSceneMainSugestions.prototype.handleShow = function (data) {
@@ -57,7 +56,3 @@ SceneSceneMainSugestions.prototype.handleBlur = function () {
 	alert("SceneSceneMainSugestions.handleBlur()");
 	// this function will be called when the scene manager move focus to another scene from this scene
 };
-
-
-
-
