@@ -190,6 +190,10 @@ alert("init.js loaded.");
 				event.preventDefault();
 				changeScene( 'SceneSugestions' );
 			break;
+			case sf.key.N1:
+				event.preventDefault();
+				changeScene( 'SceneProfile' );
+			break;
 			default:
 				alert("handle default key event, key code(" + keyCode + ")");
 				break;
@@ -198,7 +202,6 @@ alert("init.js loaded.");
 			alert('x value: ' + x);
 			alert('y value: ' + y);
 		};
-		
 
 		SceneSceneSugestions.prototype.handleKeyDown = function(keyCode) {
 			alert("SceneSceneSugestions.handleKeyDown(" + keyCode + ")");
@@ -445,6 +448,31 @@ alert("init.js loaded.");
 			alert('key code: ' + keyCode);
 			alert('x value: ' + x);
 			alert('y value: ' + y);
+		}
+
+		SceneSceneProfile.prototype.handleKeyDown = function(keyCode) {
+			current_scene = 'SceneProfile';
+			switch (keyCode) {
+			case sf.key.LEFT:
+				setCurrent( x, y-1 );
+			break;
+			case sf.key.RIGHT:
+				setCurrent( x, y+1 );
+			break;
+			case sf.key.UP:
+				setCurrent( x-1, y );
+			break;
+			case sf.key.DOWN:
+				setCurrent(x+1,y);
+			break;
+			case sf.key.ENTER:
+				movie_id = current.attr('href');
+				changeScene( 'SceneShow' );
+			break;
+			default:
+				alert("handle default key event, key code(" + keyCode + ")");
+				break;
+			}
 		}
 		return this;
 	};

@@ -9,6 +9,12 @@ SceneSceneProfile.prototype.initialize = function () {
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
+};
+
+SceneSceneProfile.prototype.handleShow = function (data) {
+	alert("SceneSceneProfile.handleShow()");
+	// this function will be called when the scene manager show this scene
+	scene_name = 'SceneProfile';
 	
 	//Watchlist movies.
 	$.ajax({
@@ -23,27 +29,22 @@ SceneSceneProfile.prototype.initialize = function () {
 		  },
 		  success: function(data){
 		  	alert('success');
-		  	for (var i = 8; i >= 0; i--) {
-		  		if(i == 8 ){
-		  			$( "#movies" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
-		  		} else { 		
-			  		$( "#movies" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
-		  		}	  		
+		  	alert( 'content: ' +data );
+		  	for (var i = 7; i >= 0; i--) {
+		  		if(i == 7 )
+		  			$( "#profileContent" ).append( '<div class="row">' );
+		  		if( i == 4 )
+		  			$( "#profileContent" ).append( '</div><div class="row">' );
+		  		if( i == 0 )
+		  			$( "#profileContent" ).append( '</div>' );
+	  			$( "#profileContent" ).append( '<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
 		  	}
 		  	$( '#movies div.item' ).keynav();
 		  },
 		  error: function(){
 		  	alert( 'error' );
 		  }
-		});	
-
-};
-
-SceneSceneProfile.prototype.handleShow = function (data) {
-	alert("SceneSceneProfile.handleShow()");
-	// this function will be called when the scene manager show this scene
-	
-	scene_name = 'SceneProfile';
+	});	
 };
 
 SceneSceneProfile.prototype.handleHide = function () {
