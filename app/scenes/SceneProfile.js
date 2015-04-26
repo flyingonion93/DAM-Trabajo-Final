@@ -16,35 +16,59 @@ SceneSceneProfile.prototype.handleShow = function (data) {
 	// this function will be called when the scene manager show this scene
 	scene_name = 'SceneProfile';
 	
-	//Watchlist movies.
+	//THIS IS FOR TESTING PURPOSES.
 	$.ajax({
 		  type: "GET",
 		  crossDomain: true,
 		  async: true,
 		  dataType: "json",
-		  url: API + '/account/'+ username + '/watchlist/movies',
-		  data: {
-			api_key : api_key,
-			session_id : session_id
-		  },
+		  url: API+"/discover/movie?api_key="+api_key,
 		  success: function(data){
-		  	alert('success');
-		  	alert( 'content: ' +data );
-		  	for (var i = 7; i >= 0; i--) {
-		  		if(i == 7 )
-		  			$( "#profileContent" ).append( '<div class="row">' );
-		  		if( i == 4 )
-		  			$( "#profileContent" ).append( '</div><div class="row">' );
-		  		if( i == 0 )
-		  			$( "#profileContent" ).append( '</div>' );
-	  			$( "#profileContent" ).append( '<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
-		  	}
-		  	$( '#movies div.item' ).keynav();
+			  for (var i = 7; i >= 0; i--) {
+			  		if(i == 7 )
+			  			$( "#profileWatchlist" ).append( '<div class="row">' );
+			  		if( i == 3 )
+			  			$( "#profileWatchlist" ).append( '</div><div class="row">' );
+			  		if( i == 0 )
+			  			$( "#profileWatchlist" ).append( '</div>' );
+		  			$( "#profileWatchlist" ).append( '<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+			  	}
+			  	$( '#profileWatchlist div.item' ).keynav();
 		  },
 		  error: function(){
 		  	alert( 'error' );
 		  }
-	});	
+		});	
+	
+	//Watchlist movies.
+//	$.ajax({
+//		  type: "GET",
+//		  crossDomain: true,
+//		  async: true,
+//		  dataType: "json",
+//		  url: API + '/account/'+ username + '/watchlist/movies',
+//		  data: {
+//			api_key : api_key,
+//			session_id : session_id
+//		  },
+//		  success: function(data){
+//		  	alert('success');
+//		  	alert( 'content: ' +data );
+//		  	for (var i = 7; i >= 0; i--) {
+//		  		if(i == 7 )
+//		  			$( "#profileWatchlist" ).append( '<div class="row">' );
+//		  		if( i == 4 )
+//		  			$( "#profileWatchlist" ).append( '</div><div class="row">' );
+//		  		if( i == 0 )
+//		  			$( "#profileWatchlist" ).append( '</div>' );
+//	  			$( "#profileWatchlist" ).append( '<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
+//		  	}
+//		  	$( '#profileWatchlist div.item' ).keynav();
+//		  },
+//		  error: function(){
+//		  	alert( 'error' );
+//		  }
+//	});
 };
 
 SceneSceneProfile.prototype.handleHide = function () {
