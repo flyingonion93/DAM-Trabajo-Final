@@ -40,6 +40,7 @@ SceneSceneMainSugestions.prototype.handleShow = function (data) {
 	alert("SceneSceneMainSugestions.handleShow()");
 	// this function will be called when the scene manager show this scene
 	scene_name = 'SceneMainSugestions';
+	$( '#movies div.item' ).keynav();
 };
 
 SceneSceneMainSugestions.prototype.handleHide = function () {
