@@ -32,6 +32,7 @@ SceneSceneShow.prototype.handleShow = function(data, type) {
 			var fecha = data.release_date;
 			
 			//alert(data.title + '  (' + fecha.substring(0, 4) + ')');
+			$("#container").css('background-image', 'url(' + base_url+'w1280'+data.backdrop_path + ')');
 			$("#imagen").append('<img src="' + base_url + 'w342' + data.poster_path+ '"/>');
 			$("#title_show").html('<b>' + data.title + '  (' + fecha.substring(0, 4) + ')</b>');
 			$("#duration").html('<b>Duration:</b> ' + data.runtime + ' min');
