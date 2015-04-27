@@ -49,6 +49,7 @@ SceneSceneVideo.prototype.handleKeyDown = function (keyCode) {
 		case sf.key.ENTER:
 			break;
 		case sf.key.RETURN:
+			event.preventDefault();
 			sf.scene.hide('SceneVideo');
 			sf.scene.show('SceneShow');
 			sf.scene.focus('SceneShow');
