@@ -45,7 +45,21 @@
 	color: white;
 }
 
+.glyphicon-plus{
+	margin-left: 50px;
+	margin-top: 70px;
+    
+	font-size: 100px;
+	color:white;
+}
+
 #movies .selected img {
+	-webkit-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+	-moz-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+	box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
+}
+
+#morefilms.selected span {
 	-webkit-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
 	-moz-box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);
 	box-shadow: 0px 0px 0px 5px rgba(214,74,50,1);

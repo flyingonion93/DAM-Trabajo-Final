@@ -34,8 +34,15 @@ SceneSceneMainSugestions.prototype.handleShow = function (data) {
 			  	for (var i = 8; i >= 0; i--) {
 			  		if(i == 8 ){
 			  			$( "#movies" ).append( '<div class="item col-xs-4" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>' );
-			  		} else { 		
-				  		$( "#movies" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+			  		} else { 
+			  			
+			  			if(i == 0){
+			  				$( "#movies" ).append('<div id="morefilms" class="item col-xs-2"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>');
+			  			}
+			  			
+			  			else {
+			  				$( "#movies" ).append('<div class="item col-xs-2" href="'+data.results[i].id+'"><img src="'+base_url+'w342'+data.results[i].poster_path+'"/></div>');
+			  			}
 			  		}	  		
 			  	}
 			  	$( '#movies div.item' ).keynav();
