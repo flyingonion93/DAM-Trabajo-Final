@@ -604,10 +604,10 @@ function login(username, password) {
 
 function scrollDownNR() {	
 	alert('DOWN');
-	scrolledNR = scrolledNR + 550;
+	scrolledNR = scrolledNR + 570;
 	$("#moviesNR").animate({
 		scrollTop : scrolledNR
-	}, 100);
+	}, 200);
 	//$( '#moviesNR div.item' ).keynav();
 
 }
@@ -615,10 +615,10 @@ function scrollDownNR() {
 function scrollUpNR() {	
 	alert('UP');	
 	if (scrolledNR > 0){
-		scrolledNR = scrolledNR - 550;
+		scrolledNR = scrolledNR - 570;
 	}	
 	$("#moviesNR").animate({
 	        scrollTop:  scrolledNR
-	   });
+	   }, 200);
 	//$( '#moviesNR div.item' ).keynav();
 }
