@@ -30,7 +30,7 @@ function onStart() {
 	} else {
 		sf.scene.show('SceneMainSugestions');
 		sf.scene.focus('SceneMainSugestions');
-	}
+	}	
 }
 function onDestroy() {
 	// stop your XHR or Ajax operation and put codes to destroy your application
@@ -604,19 +604,21 @@ function login(username, password) {
 
 function scrollDownNR() {	
 	alert('DOWN');
-	scrolledNR = scrolledNR + 300;
+	scrolledNR = scrolledNR + 550;
 	$("#moviesNR").animate({
-		scrollTopNR : scrolledNR
+		scrollTop : scrolledNR
 	}, 100);
+	//$( '#moviesNR div.item' ).keynav();
 
 }
 
 function scrollUpNR() {	
 	alert('UP');	
 	if (scrolledNR > 0){
-		scrolledNR = scrolledNR - 300;
+		scrolledNR = scrolledNR - 550;
 	}	
 	$("#moviesNR").animate({
 	        scrollTop:  scrolledNR
 	   });
+	//$( '#moviesNR div.item' ).keynav();
 }
