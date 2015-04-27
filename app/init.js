@@ -16,6 +16,7 @@ var password = 'johanderohan';
 var current_scene = '';
 var gotFilter;
 var scrolledNR = 0;
+var scrolledS = 0;
 
 function onStart() {
 	// TODO : Add your Initialize code here
@@ -218,9 +219,11 @@ alert("init.js loaded.");
 				setCurrent(x, y + 1);
 			break;
 			case sf.key.UP:
+				scrollUpS();
 				setCurrent(x - 1, y );
 			break;
 			case sf.key.DOWN:
+				scrollDownS();
 				setCurrent(x + 1, y );
 			break;
 			case sf.key.ENTER:
@@ -619,6 +622,27 @@ function scrollUpNR() {
 	}	
 	$("#moviesNR").animate({
 	        scrollTop:  scrolledNR
+	   }, 200);
+	//$( '#moviesNR div.item' ).keynav();
+}
+
+function scrollDownS() {	
+	alert('DOWN');
+	scrolledS = scrolledS + 570;
+	$("#moviesSugestions").animate({
+		scrollTop : scrolledS
+	}, 200);
+	//$( '#moviesNR div.item' ).keynav();
+
+}
+
+function scrollUpS() {	
+	alert('UP');	
+	if (scrolledS > 0){
+		scrolledS = scrolledS - 570;
+	}	
+	$("#moviesSugestions").animate({
+	        scrollTop:  scrolledS
 	   }, 200);
 	//$( '#moviesNR div.item' ).keynav();
 }
